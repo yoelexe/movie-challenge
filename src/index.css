@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+#1a1a1a
+#ffffff
+#f7b140
+#d9d9d9
+#c2c2c2
+
+
+#f5c75c
+#e9483a
+#1c1c1c
+#ffffff
+#4a4a4a*/
+:root {
+  --color-rosa:#F2B3CA;
+  --color-azul:#ADD4D9;
+  --color-marron:#A6796F;
+  --color-negro:#0D0D0D;
+  --color-naranja:#F2B872;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
