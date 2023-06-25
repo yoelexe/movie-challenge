@@ -1,78 +1,68 @@
 // import { FiImage, FiMenu, FiHome, FiFastForward, FiSettings, FiUser, FiLogOut, FiHeart } from "react-icons/fi";
-import { useState } from "react";
-import "./header.css";
+// import { useState } from "react";
 import {
-  FiMenu,
-  FiSearch,
-  FiUser,
-  FiShoppingCart,
-  FiHeart,
-  FiHome,
-  FiLogOut,
-  FiSettings,
-  FiWatch,
   FiX,
+  FiMenu,
 } from "react-icons/fi";
 
 export const Header = () => {
+
+
+  // ? Checar useRef para el sidebar
+  const menuCloseBtn = () => {
+    const offcanvas = document.querySelector('.offcanvas-menu');
+    offcanvas.classList.remove('translate-x-0')
+    offcanvas.classList.add('-translate-x-full')
+  }
+
+  const menuOpenBtn = () => {
+    const offcanvas = document.querySelector('.offcanvas-menu');
+    offcanvas.classList.remove('-translate-x-full')
+    offcanvas.classList.add('translate-x-0')
+  }
+
   // intento de toggle para el sidebar
-  const [show, setShow] = useState(false);
+  // const [show, setShow] = useState(false);
   // los estilos en linea no se pueden reutilizar
   return (
     <>
       {/* Header */}
-      <nav className="flex-div">
-        <div className="nav-left flex-div">
-          <button onClick={() => setShow(true)}>
-            <FiMenu className="menu-icon" />
-          </button>
+      <header className="bg-late-100 shadow-md">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-2 h-10 items-center">
+
+            <div className="flex justify-start">
+              <div className="relative">
+              <a className="menu-open-btn" onClick={menuOpenBtn}><FiMenu className="h-6 w-6 cursor-pointer"/></a>
+              <nav className="offcanvas-menu fixed bg-white h-screen top-0 z-10 left-0
+              md:w-1/6 w-2/3 shadow-md flex items-center px-8 -translate-x-full duration-300">
+                <a className="menu-close-btn absolute top-6 right-6" onClick={menuCloseBtn}>
+                  <FiX className="cursor-pointer"/>
+                </a>
+                <ul>
+                  <li className="my-5">
+                    <a className="text-xl hover:text-red-500 cursor-pointer duration-300">Home</a></li>
+                  <li className="my-5">
+                    <a className="text-xl hover:text-red-500 cursor-pointer">About</a></li>
+                  <li className="my-5">
+                    <a className="text-xl hover:text-red-500 cursor-pointer">Contact</a></li>
+                  <li className="my-5">
+                    <a className="text-xl hover:text-red-500 cursor-pointer">Settings</a></li>
+                </ul>
+              </nav>
+              </div>
+            </div>
+
+            <div className="flex justify-end">
+                <a className="text-2xl">Logo</a>
+            </div>
+
+          </div>
         </div>
-        <div className="nav-middle">
-          <h1>CITYNEMA</h1>
-        </div>
-        <div className="nav-right flex-div">
-          <FiSearch className="icon-right" />
-          <FiShoppingCart className="icon-right" />
-          <FiUser className="icon-right" />
-        </div>
-      </nav>
+      </header>
 
       {/* Sidebar */}
-      <div>
-        {show ? (
-          <section className="sidebar">
-            <button className="btnExit" onClick={() => setShow(false)}>
-              <FiX />
-            </button>
-            <div className="short-links">
-              <a>
-                <FiHome className="icon" /> Home
-              </a>
-              <a>
-                {" "}
-                <FiWatch className="icon" /> Movies
-              </a>
-              <a>
-                {" "}
-                <FiHeart className="icon" /> Favorites
-              </a>
-              <a>
-                {" "}
-                <FiUser className="icon" /> User
-              </a>
-              <a>
-                {" "}
-                <FiSettings className="icon" /> Settings
-              </a>
-              <hr></hr>
-              <a>
-                {" "}
-                <FiLogOut className="icon" /> Log Out
-              </a>
-            </div>
-          </section>
-        ) : null}
-      </div>
+      
     </>
   );
 };
