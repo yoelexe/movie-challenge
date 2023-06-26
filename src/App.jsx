@@ -1,7 +1,7 @@
 // import { useState } from 'react'
 
 import { Routes, Route } from "react-router-dom";
-import { Home } from "./components/home/home";
+import { Home } from "./components/home/Home";
 import { Movies } from "./components/movies/Movies";
 import { Error } from "./components/error/Error";
 import { Header } from "./components/home/layouts/Header";

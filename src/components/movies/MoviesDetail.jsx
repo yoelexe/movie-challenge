@@ -30,6 +30,13 @@ export const MoviesDetail = () => {
   return (
     <div>
       <h2>Nombre de la peli: {information.title} </h2>
+      {/*backdrop_path*/}
+      <img
+          className="cursor-pointer rounded-2xl"
+         
+            src={`https://image.tmdb.org/t/p/w500/${information.backdrop_path}`}
+            alt={information.name}
+          />
     </div>
   )
 }
