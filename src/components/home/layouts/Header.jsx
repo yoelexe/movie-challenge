@@ -28,7 +28,7 @@ export const Header = () => {
     <>
       {/* Header */}
       <header className="bg-late-100 shadow-md">
-        <div className="container mx-auto">
+        <div className="container mx-auto px-8">
           <div className="grid grid-cols-2 h-10 items-center">
 
             <div className="flex justify-start">
