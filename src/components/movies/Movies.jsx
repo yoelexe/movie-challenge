@@ -1,6 +1,6 @@
 
 export const Movies = () => {
   return (
-    <div>Detail Movies</div>
+    <div>All Movies</div>
   )
 }

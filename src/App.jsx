@@ -7,7 +7,8 @@ import { Error } from "./components/error/Error";
 import { Header } from "./components/home/layouts/Header";
 import { Footer } from "./components/home/layouts/Footer";
 import { Login } from "./components/auth/Login";
-import { StrictMode } from "react";
+import { MoviesDetail } from "./components/movies/MoviesDetail";
+// ! para el Login import { StrictMode } from "react";
 
 /* import { useEffect, useState } from "react" */
 
@@ -19,15 +20,14 @@ function App() {
   // jsx (js + xml)javascript extended -> el html de mi aplicación
   return (
     <>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/movies" element={<Movies />}></Route>
-          <StrictMode>
-          <Route path="/login" element={<Login />}></Route>
-          </StrictMode>
-          <Route path="/*" element={<Error />}></Route>
-        </Routes>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/movies" element={<Movies />}></Route>
+        <Route path="/movies/:moviesId" element={<MoviesDetail />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/*" element={<Error />}></Route>
+      </Routes>
       <Footer />
     </>
   );
