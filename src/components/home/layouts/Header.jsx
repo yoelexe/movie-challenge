@@ -57,7 +57,7 @@ export const Header = () => {
             </div>
 
             <div className="flex justify-end">
-                <a className="text-2xl">Logo</a>
+                <a className="text-2xl">CITYNEMA</a>
             </div>
 
           </div>

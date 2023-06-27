@@ -40,14 +40,14 @@ export const MoviesDetail = () => {
   // console.log(moviesId)
 
   return (
-    <div>
+    <div style={{backgroundColor: '#222'}}>
       {/*backdrop_path*/}
 
-      <div className="back-detail">
+      <div className="back-detail image-container">
         <img
           src={`https://image.tmdb.org/t/p/original/${information.backdrop_path}`}
           alt={information.name}
-        />
+        /> 
       </div>
 
       <div className="container-detail">

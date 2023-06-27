@@ -18,6 +18,7 @@ function App() {
   // Ciclo de vida: Como interactuca con el tiempo el compoenente
 
   // jsx (js + xml)javascript extended -> el html de mi aplicación
+
   return (
     <>
       <Header />
