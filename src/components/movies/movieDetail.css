@@ -1,0 +1,30 @@
+.back-detail{
+  filter: brightness(50%);
+  
+  /*bottom: 50px;*/
+  
+}
+
+.container-detail{
+  display: grid;
+  bottom: 150px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+  gap: 20px;
+}
+
+@media (min-width: 600px) {
+  .container-detail { grid-template-columns: repeat(3, 1fr); }
+}
+
+.first-section img{
+  border-radius: 10px;
+}
+
+.container-detail section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

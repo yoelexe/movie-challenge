@@ -28,6 +28,7 @@ export const Header = () => {
     <>
       {/* Header */}
       <header className="bg-late-100 shadow-md">
+        {/* px-8 absolute z-50 */}
         <div className="container mx-auto px-8">
           <div className="grid grid-cols-2 h-10 items-center">
 
@@ -43,11 +44,13 @@ export const Header = () => {
                   <li className="my-5">
                     <a className="text-xl hover:text-red-500 cursor-pointer duration-300" href="/">Home</a></li>
                   <li className="my-5">
-                    <a className="text-xl hover:text-red-500 cursor-pointer">About</a></li>
+                    <a className="text-xl hover:text-red-500 cursor-pointer">Movies</a></li>
                   <li className="my-5">
-                    <a className="text-xl hover:text-red-500 cursor-pointer">Contact</a></li>
+                    <a className="text-xl hover:text-red-500 cursor-pointer">Favorite</a></li>
                   <li className="my-5">
-                    <a className="text-xl hover:text-red-500 cursor-pointer">Settings</a></li>
+                    <a className="text-xl hover:text-red-500 cursor-pointer">User</a></li>
+                  <li className="my-5">
+                    <a className="text-xl hover:text-red-500 cursor-pointer">Log Out</a></li>
                 </ul>
               </nav>
               </div>
