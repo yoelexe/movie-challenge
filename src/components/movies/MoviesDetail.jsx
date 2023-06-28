@@ -4,7 +4,7 @@ import "./movieDetail.css";
 
 export const MoviesDetail = () => {
   const [information, setInformation] = useState([]);
-  
+  const [cast, setCast] = useState([]);
 
   let { moviesId } = useParams();
 
@@ -18,21 +18,39 @@ export const MoviesDetail = () => {
     }
   };
 
-  /* const fetchCredits = async () => {
-    const consult = await fetch(`https://api.themoviedb.org/3/movie/298618?api_key=49e8c67adf3bbd50a3fce82777bba341&append_to_response=credits`);
-    if(consult.ok){
+  const fetchCredits = async () => {
+    fetch(
+      `https://api.themoviedb.org/3/movie/${moviesId}/credits?api_key=49e8c67adf3bbd50a3fce82777bba341`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        const actors = data.cast
+          .map((actor) => actor.name)
+          .slice(0, 5)
+          .join(", ");
+        setCast(actors);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+    /* if(consult.ok){
       const data = await consult.json()
-      console.log(data)
+      const data01 = data.cast.map((actor) => actor.name)
+      const final = data01.slice(0, 5)
+      console.log(final)
       // setCredits(data);
 
-    }
-  } */
+    } */
+  };
 
   // const url = 'https://api.themoviedb.org/3/movie/movie_id?api_key=49e8c67adf3bbd50a3fce82777bba341'
 
   useEffect(() => {
     fetchInformation();
-    
+  });
+
+  useEffect(() => {
+    fetchCredits();
   });
   // consumir desde los parametros algunas variantes
 
@@ -40,19 +58,17 @@ export const MoviesDetail = () => {
   // console.log(moviesId)
 
   return (
-    <div style={{backgroundColor: 'black'}}>
+    <div style={{ backgroundColor: "black" }}>
       {/*backdrop_path*/}
 
       <div className="back-detail">
         <img
           src={`https://image.tmdb.org/t/p/original/${information.backdrop_path}`}
           alt={information.name}
-        /> 
+        />
       </div>
 
-      <div className="video-detail">
-
-      </div>
+      <div className="video-detail"></div>
 
       <div className="container-detail">
         <section className="first-section">
@@ -62,15 +78,17 @@ export const MoviesDetail = () => {
               alt={information.name}
             />
           </div>
-          <h2>{information.title} </h2>
-          
         </section>
 
         <section className="second-section">
-        <p>{information.overview}</p>
-          </section>
+          <h2>{information.title} </h2>
+          <p>{information.overview}</p>
+        </section>
 
-        <section className="thrid-section">thrid-section</section>
+        <section className="thrid-section">
+          <h3>Cast and Crew</h3>
+          <p>{cast}</p>
+        </section>
       </div>
     </div>
   );

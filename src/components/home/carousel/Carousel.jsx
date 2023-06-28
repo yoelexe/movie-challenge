@@ -5,10 +5,10 @@ export const Carousel = () => {
 
   const slides = [
     {
-      url: 'https://studioghiblimovies.com/wp-content/uploads/2020/03/barcode-scanners-qr-code-2d-code-creative-barcode.jpg'
+      url: 'https://www.pixground.com/wp-content/uploads/2023/06/Spider-Man-Across-the-Spider-Verse-Miles-Morales-4k-Wallpaper.jpg'
     },
     {
-      url: 'https://i.pinimg.com/originals/79/66/1c/79661ce094727e32d528874bb9683fae.jpg'
+      url: 'https://images.hdqwalls.com/wallpapers/fast-x-movie-8k-t5.jpg'
     },
     {
       url: 'https://i.pinimg.com/originals/95/52/4d/95524d488344134014e7afdaf3ab7adc.jpg'

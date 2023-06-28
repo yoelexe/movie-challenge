@@ -42,7 +42,7 @@ export const Trending = () => {
           <figcaption className="flex items-center justify-center flex-col">
             {/* text-cente mb-4 */}
           <p className="text-center   font-bold leading-relaxed">{pelicula.title}</p>
-          <Link className="underline underline-offset-4" to={`/movies/${pelicula.id}`}>Ver detalle</Link>
+          <Link className="underline underline-offset-4 text-blue-700" to={`/movies/${pelicula.id}`}>Ver detalle</Link>
           </figcaption>
           {/*
           Las rutas dinamicas se consumen a traves de un Hook
