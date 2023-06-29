@@ -29,7 +29,7 @@ export const Header = () => {
   return (
     <>
       {/* Header */}
-      <header className="bg-late-100 shadow-md">
+      <header className="bg-late-100 shadow-md relative">
         {/* px-8 absolute z-50 */}
         <div className="container mx-auto px-8">
           <div className="grid grid-cols-3 h-10 items-center">

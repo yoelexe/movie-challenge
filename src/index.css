@@ -29,3 +29,8 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
+body{
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}

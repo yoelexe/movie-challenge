@@ -14,6 +14,7 @@ export const MoviesDetail = () => {
     );
     if (result.ok) {
       const data = await result.json();
+      /* console.log(data.genres.map((hola) => hola.name).join(" ")) */
       setInformation(data);
     }
   };
@@ -26,9 +27,7 @@ export const MoviesDetail = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        const actors = data.cast
-          .map((actor) => actor.name)
-          .slice(0, 5)
+        const actors = data.cast.map((actor) => actor.name).slice(0, 5);
         setCast(actors);
       })
       .catch((error) => {
@@ -58,38 +57,49 @@ export const MoviesDetail = () => {
   // let productSelected = movies.find(movie => movie.id === moviesId)
   // console.log(moviesId)
 
-  return (
-    <div style={{ backgroundColor: "black" }}>
-      {/*backdrop_path*/}
+  const toTime = (min) => {
+    let horas = Math.floor(min / 60);
+    min = min % 60
+    return `${horas}h ${min}m`
+  }
 
+  return (
+    <div className="principal">
+      {/*backdrop_path*/}
       <div className="back-detail">
         <img
           src={`https://image.tmdb.org/t/p/original/${information.backdrop_path}`}
           alt={information.name}
         />
-      </div>
+        <div className="segundo">
+          <h2>{information.title} </h2>
 
-      <div className="video-detail"></div>
-
-      <div className="container-detail">
-        <section className="first-section">
+          <div className="container-detail">
+            {/* <section className="first-section">
           <div>
             <img
               src={`https://image.tmdb.org/t/p/w342/${information.poster_path}`}
               alt={information.name}
             />
           </div>
-        </section>
+        </section> */}
 
-        <section className="second-section">
-          <h2>{information.title} </h2>
-          <p>{information.overview}</p>
-        </section>
+            <section className="first-section">
+              <span>{information.popularity}</span>
+              <span>{information.release_date}</span>
+              <span>{information.vote_average}</span>
+              <span>{toTime(information.runtime)}</span>
+              {/* <span>{information.genres.map((nombre) => nombre.name).join(" • ")}</span> */}
+            </section>
 
-        <section className="thrid-section">
-          <h3>Cast and Crew</h3>
-          {/* <p>{cast}<br/></p> */}
-          {/* {
+            <section className="second-section">
+              <p>{information.overview}</p>
+            </section>
+
+            <section className="thrid-section">
+              <h3>Cast and Crew</h3>
+              {/* <p>{cast}<br/></p> */}
+              {/* {
             cast.map((actor) => (
               <table key={actor.id}>
                 <tr >
@@ -99,13 +109,17 @@ export const MoviesDetail = () => {
               </table>
             ))
           } */}
-          <p>{cast[0]}</p>
-          <p>{cast[1]}</p>
-          <p>{cast[2]}</p>
-          <p>{cast[3]}</p>
-          <p>{cast[4]}</p>
-        </section>
+              <p>{cast[0]}</p>
+              <p>{cast[1]}</p>
+              <p>{cast[2]}</p>
+              <p>{cast[3]}</p>
+              <p>{cast[4]}</p>
+            </section>
+          </div>
+        </div>
       </div>
+
+      {/* <div className="video-detail"></div> */}
     </div>
   );
 };
