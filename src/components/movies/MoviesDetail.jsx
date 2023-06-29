@@ -18,6 +18,8 @@ export const MoviesDetail = () => {
     }
   };
 
+  // backslash \ alt + 92
+
   const fetchCredits = async () => {
     fetch(
       `https://api.themoviedb.org/3/movie/${moviesId}/credits?api_key=49e8c67adf3bbd50a3fce82777bba341`
@@ -27,7 +29,6 @@ export const MoviesDetail = () => {
         const actors = data.cast
           .map((actor) => actor.name)
           .slice(0, 5)
-          .join(", ");
         setCast(actors);
       })
       .catch((error) => {
@@ -87,7 +88,22 @@ export const MoviesDetail = () => {
 
         <section className="thrid-section">
           <h3>Cast and Crew</h3>
-          <p>{cast}</p>
+          {/* <p>{cast}<br/></p> */}
+          {/* {
+            cast.map((actor) => (
+              <table key={actor.id}>
+                <tr >
+                <td>{actor.name[0]}</td>
+              </tr>
+              
+              </table>
+            ))
+          } */}
+          <p>{cast[0]}</p>
+          <p>{cast[1]}</p>
+          <p>{cast[2]}</p>
+          <p>{cast[3]}</p>
+          <p>{cast[4]}</p>
         </section>
       </div>
     </div>
