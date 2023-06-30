@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./movieDetail.css";
+import {
+  FiHeart, FiPlay
+} from "react-icons/fi";
 
 export const MoviesDetail = () => {
   const [information, setInformation] = useState([]);
@@ -71,9 +74,9 @@ export const MoviesDetail = () => {
           src={`https://image.tmdb.org/t/p/original/${information.backdrop_path}`}
           alt={information.name}
         />
-        <div className="segundo">
-          <h2>{information.title} </h2>
-
+        <div className="segundo" >
+          
+        
           <div className="container-detail">
             {/* <section className="first-section">
           <div>
@@ -85,15 +88,24 @@ export const MoviesDetail = () => {
         </section> */}
 
             <section className="first-section">
-              <span>{information.popularity}</span>
-              <span>{information.release_date}</span>
-              <span>{information.vote_average}</span>
-              <span>{toTime(information.runtime)}</span>
-              {/* <span>{information.genres.map((nombre) => nombre.name).join(" • ")}</span> */}
+            <h2>{information.title} </h2>
+            <p>{information.overview}</p>
+            {/* <span>{information.popularity}</span> */}
+            <div className="flex justify-start items-center space-x-1">
+            <a style={{display: 'flex', border: '1px solid white', borderRadius: '5px',
+            justifyContent: 'space-around'}}
+            className="w-20 items-center justify-center my-3 cursor-pointer"><FiPlay className="my-3"/>Hola</a>
+              <button className="favorite"><FiHeart /></button>
+            </div>
             </section>
 
             <section className="second-section">
-              <p>{information.overview}</p>
+            <span>Date: {information.release_date}</span>
+              <span>Rating: {information.vote_average}</span>
+              <span>Duration: {toTime(information.runtime)}</span>
+              {/* <span>{information.genres.map((nombre) => nombre.name).join(" • ")}</span> */}
+            
+              
             </section>
 
             <section className="thrid-section">
