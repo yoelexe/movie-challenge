@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./movieDetail.css";
-import {
-  FiHeart, FiPlay
-} from "react-icons/fi";
+import { FiHeart, FiPlay } from "react-icons/fi";
+import apiConfig from "../../api/apiConfig";
 
 export const MoviesDetail = () => {
   const [information, setInformation] = useState([]);
@@ -62,56 +61,73 @@ export const MoviesDetail = () => {
 
   const toTime = (min) => {
     let horas = Math.floor(min / 60);
-    min = min % 60
-    return `${horas}h ${min}m`
-  }
+    min = min % 60;
+    return `${horas}h ${min}m`;
+  };
 
   return (
-    <div className="principal">
+    <div className="bg-black ">
       {/*backdrop_path*/}
-      <div className="back-detail">
-        <img
-          src={`https://image.tmdb.org/t/p/original/${information.backdrop_path}`}
-          alt={information.name}
-        />
-        <div className="segundo" >
-          
-        
-          <div className="container-detail">
-            {/* <section className="first-section">
-          <div>
-            <img
-              src={`https://image.tmdb.org/t/p/w342/${information.poster_path}`}
-              alt={information.name}
-            />
-          </div>
-        </section> */}
-
-            <section className="first-section">
-            <h2>{information.title} </h2>
-            <p>{information.overview}</p>
-            {/* <span>{information.popularity}</span> */}
-            <div className="flex justify-start items-center space-x-1">
-            <a style={{display: 'flex', border: '1px solid white', borderRadius: '5px',
-            justifyContent: 'space-around'}}
-            className="w-20 items-center justify-center my-3 cursor-pointer"><FiPlay className="my-3"/>Hola</a>
-              <button className="favorite"><FiHeart /></button>
-            </div>
-            </section>
-
-            <section className="second-section">
-            <span>Date: {information.release_date}</span>
-              <span>Rating: {information.vote_average}</span>
-              <span>Duration: {toTime(information.runtime)}</span>
-              {/* <span>{information.genres.map((nombre) => nombre.name).join(" • ")}</span> */}
-            
+      <div
+        className="banner"
+        style={{
+          backgroundImage: `url(${apiConfig.originalImage(
+            information.backdrop_path || information.poster_path
+          )})`,
+        }}
+      ></div>
+      <div className="movie-content">
+        <div className="container-detail">
+          <section className="first-section">
+            <div className="movie-content__poster">
+              <div
+                className="movie-content__poster__img"
+                style={{
+                  backgroundImage: `url(${apiConfig.originalImage(
+                    information.poster_path || information.backdrop_path
+                  )})`,
+                }}
+              ></div>
               
-            </section>
+              <div className="flex flex-col">
+              <span>Date: {information.release_date}</span>
+            <span>Rating: {information.vote_average}</span>
+            <span>Duration: {toTime(information.runtime)}</span>
+              </div>
+            </div>
+          </section>
 
-            <section className="thrid-section">
-              <h3>Cast and Crew</h3>
-              {/* <p>{cast}<br/></p> */}
-              {/* {
+          
+
+          <section className="second-section">
+          <h2>{information.title} </h2>
+          <p>{information.overview}</p>
+            {/* <span>{information.popularity}</span> */}
+            <div>
+              <a
+                style={{
+                  display: "flex",
+                  border: "1px solid white",
+                  borderRadius: "5px",
+                  justifyContent: "space-around",
+                }}
+                className="w-20 items-center justify-center my-3 cursor-pointer"
+              >
+                <FiPlay className="my-3" />
+                Hola
+              </a>
+              <button className="favorite">
+                <FiHeart />
+              </button>
+            </div>
+            
+            {/* <span>{information.genres.map((nombre) => nombre.name).join(" • ")}</span> */}
+          </section>
+
+          <section className="thrid-section">
+            <h3>Cast</h3>
+            {/* <p>{cast}<br/></p> */}
+            {/* {
             cast.map((actor) => (
               <table key={actor.id}>
                 <tr >
@@ -121,13 +137,12 @@ export const MoviesDetail = () => {
               </table>
             ))
           } */}
-              <p>{cast[0]}</p>
-              <p>{cast[1]}</p>
-              <p>{cast[2]}</p>
-              <p>{cast[3]}</p>
-              <p>{cast[4]}</p>
-            </section>
-          </div>
+            <p>{cast[0]}</p>
+            <p>{cast[1]}</p>
+            <p>{cast[2]}</p>
+            <p>{cast[3]}</p>
+            <p>{cast[4]}</p>
+          </section>
         </div>
       </div>
 
