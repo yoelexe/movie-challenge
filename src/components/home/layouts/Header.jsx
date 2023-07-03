@@ -47,7 +47,7 @@ export const Header = () => {
                   <li className="my-5">
                     <a className="text-xl hover:text-red-500 cursor-pointer duration-300" href="/">Home</a></li>
                   <li className="my-5">
-                    <a className="text-xl hover:text-red-500 cursor-pointer">Movies</a></li>
+                    <a className="text-xl hover:text-red-500 cursor-pointer" href="/movies">Movies</a></li>
                   <li className="my-5">
                     <a className="text-xl hover:text-red-500 cursor-pointer">Favorite</a></li>
                   <li className="my-5">

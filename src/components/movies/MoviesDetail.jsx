@@ -101,6 +101,7 @@ export const MoviesDetail = () => {
 
           <section className="second-section">
           <h2>{information.title} </h2>
+          <h3>The Sypnopsis</h3>
           <p>{information.overview}</p>
             {/* <span>{information.popularity}</span> */}
             <div>
@@ -114,7 +115,7 @@ export const MoviesDetail = () => {
                 className="w-20 items-center justify-center my-3 cursor-pointer"
               >
                 <FiPlay className="my-3" />
-                Hola
+                Trailer
               </a>
               <button className="favorite">
                 <FiHeart />
@@ -125,7 +126,7 @@ export const MoviesDetail = () => {
           </section>
 
           <section className="thrid-section">
-            <h3>Cast</h3>
+            <h3>The Actors</h3>
             {/* <p>{cast}<br/></p> */}
             {/* {
             cast.map((actor) => (

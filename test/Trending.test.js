@@ -33,3 +33,6 @@ import Trending from '../src/components/home/trending/Trending' */
 
   expect(screen.getByText("Now In Cinemas")).toBeInTheDocument();
 }) */
+
+
+// TODO: https://stackoverflow.com/questions/73289933/unable-to-fetch-data-from-tmdb-javascript
