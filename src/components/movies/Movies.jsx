@@ -1,25 +1,30 @@
-import { FiSearch, FiSliders } from "react-icons/fi";
-import "./movieAll.css";
+import { FilterMovie } from "./filter/FilterMovie";
+import { SearchMovie } from "./search/SearchMovie";
+import "./movies.css";
 
 export const Movies = () => {
   return (
     <>
-      <div className="container-all">
-        <h2>Hola</h2>
-        <p>Hola</p>
-        <p>Hola</p>
-        <p>Hola</p>
-        <div className="search">
-          <FiSearch className="icon-search" />
-          <input
-            className="search-all"
-            type="search"
-            placeholder="Search..."
-          ></input>
+      <div className="all-movies">
+        <h2
+          style={{
+            fontSize: "50px",
+            fontWeight: "600",
+            paddingBottom: "10px",
+            paddingTop: "20px",
+          }}
+        >
+          Search
+        </h2>
+        <div className="home_panelList-wrap">
+          <div className="home_panel-wrap">
+            <FilterMovie />
+          </div>
+
+          <div className="home_list-wrap">
+            <SearchMovie />
+          </div>
         </div>
-        <button>
-          <FiSliders />
-        </button>
       </div>
     </>
   );

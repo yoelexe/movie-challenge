@@ -7,7 +7,7 @@ import { Error } from "./components/error/Error";
 import { Header } from "./components/home/layouts/Header";
 import { Footer } from "./components/home/layouts/Footer";
 import { Login } from "./components/auth/Login";
-import { MoviesDetail } from "./components/movies/MoviesDetail";
+import { MoviesDetail } from "./components/movies/detail/MoviesDetail";
 // ! para el Login import { StrictMode } from "react";
 
 /* import { useEffect, useState } from "react" */

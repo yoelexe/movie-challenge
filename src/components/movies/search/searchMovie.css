@@ -1,10 +1,6 @@
-.container-all{
+.container-search{
   width: 100%;
   border: 1px solid pink;
-}
-
-h2{
-  font-size: 35px;
 }
 
 .search{

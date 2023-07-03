@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./movieDetail.css";
 import { FiHeart, FiPlay } from "react-icons/fi";
-import apiConfig from "../../api/apiConfig";
+import apiConfig from "../../../api/apiConfig";
 
 export const MoviesDetail = () => {
   const [information, setInformation] = useState([]);
