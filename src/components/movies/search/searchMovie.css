@@ -1,9 +1,6 @@
-.container-search{
-  width: 100%;
-  border: 1px solid pink;
-}
 
-.search{
+
+/* .search{
   width: 300px;
   vertical-align: middle;
   white-space: nowrap;
@@ -16,7 +13,6 @@
   background: #2b303b;
   border: none;
   font-size: 10pt;
-  /* float: left; */
   color: #262626;
   padding-left: 45px;
   -webkit-border-radius: 5px;
@@ -47,4 +43,28 @@
 .search .search-all:active{
   outline: none;
   background: white;
+} */
+
+.search{
+  display: inline-flex;
+  align-items: center;
+  
+  padding: 1.5rem 1rem;
+}
+
+.search .icon-search{
+  color: rgb(0, 0, 0, 0.26);
+  margin-right: 2rem;
+}
+
+
+.search .search-all{
+  font-size: 1rem;
+  outline: none;
+  border-bottom: 1px solid;
+  width: 500px;
+}
+
+.search .search-all::placeholder{
+  color: rgb(0, 0, 0, 0.26);
 }

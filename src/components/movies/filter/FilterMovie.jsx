@@ -1,6 +1,8 @@
 
 export const FilterMovie = () => {
   return (
-    <div>FilterMovie</div>
+    <div>
+      {/* category */}
+    </div>
   )
 }
