@@ -1,53 +1,63 @@
-import { FiSearch, FiSliders } from "react-icons/fi";
+import { FiSearch } from "react-icons/fi";
 import "./searchMovie.css";
 import apiConfig from "../../../api/apiConfig";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+// import { CardMovie } from "./CardMovie";
 
-// eslint-disable-next-line react/prop-types
-export const SearchMovie = ({ value, changeInput }) => {
+export const SearchMovie = () => {
+  // const [query, setQuery] = useState("");
 
-  const [query] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
+  const [movies, setMovies] = useState([]);
 
-  const [setMovies] = useState([]);
+  const handleInput = async () => {
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=${apiConfig.apiKey}&query=${searchTerm}`;
 
-  const searchMovies = async (e) => {
-    e.preventDefault();
-    console.log("submitting");
-
-    const url = `${apiConfig.baseUrl}search/movie?api_key=${apiConfig.apiKey}&query=${query}&page1&include_adult=false`
-
-    try{
-      const res = await fetch(url);
-      const data = await res.json();
-      setMovies(data.results)
-    }catch(err){
-      console.log(err)
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      setMovies(data.results);
+    } catch (error) {
+      console.log(error);
     }
-  }
+  };
+
+  useEffect(() => {
+    handleInput();
+  },);
 
   return (
     <>
       <section className="container-search">
         <h2>Search</h2>
-        
+
         <div className="search">
-          <FiSearch className="icon-search" />
+          <FiSearch className="icon-search" onClick={handleInput} />
           <input
             className="search-all"
-            type="search"
+            type="text"
             placeholder="Search by..."
-            value={value}
-            onChange={changeInput}
+            autoComplete="off"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
           ></input>
         </div>
-        <button>
-          <FiSliders onClick={searchMovies}/>
-        </button>
+        {/* <button>
+          <FiSliders/>
+        </button> */}
         <hr></hr>
       </section>
-      <section className="container-result">
-
+      <section className="container-result ">
+        <div>
+        {movies.map((movie) => (
+          <div key={movie.id}>
+            <h3>{movie.title}</h3>
+            {/* <p>{movie.overview}</p> */}
+            {/* Resto de los detalles de la película */}
+          </div>
+        ))}
+        </div>
       </section>
     </>
   );
-}
+};
