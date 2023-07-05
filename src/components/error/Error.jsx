@@ -1,36 +1,14 @@
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+import "./error.css";
 
 export const Error = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   return (
-    <div
-      style={{
-        color: "white",
-        height: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        fontSize: "3rem",
-        flexDirection: "column",
-      }}
-    >
-      Looks like path is incorrect
-      <button
-        onClick={() => navigate("/")}
-        style={{
-          marginTop: "20px",
-          padding: "20px 40px",
-          fontSize: "2rem",
-          fontWeight: "bolder",
-          backgroundColor: "#e50914",
-          cursor: "pointer",
-          borderRadius: "5px",
-          border: "none",
-        }}
-      >
-        Go To Home screen Page
-      </button>
+    <div className="container-error">
+      <div className="dino">
+        <img src="https://i.etsystatic.com/26408529/c/1762/1762/534/180/il/d40d21/2809805632/il_300x300.2809805632_pzad.jpg" alt=""></img>
+      </div>
     </div>
   );
 }

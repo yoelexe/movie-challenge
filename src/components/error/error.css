@@ -1,0 +1,36 @@
+.container-error{
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  background-color: white;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.container-error .dino{
+  height: 70px;
+  width: 70px;
+  position: absolute;
+  bottom: 28px;
+  animation: dinoAnimate 0.5s linear;
+}
+
+
+.container-error .dino img{
+  height: 70px;
+  width: 70px;
+}
+
+@keyframes dinoAnimate{
+  0%, 100%{
+    bottom: 28px;
+  }
+  45%, 55%{
+    bottom: 160px;
+  }
+}
