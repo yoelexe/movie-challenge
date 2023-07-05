@@ -1,4 +1,3 @@
-// import { FilterMovie } from "./filter/FilterMovie";
 import { SearchMovie } from "./search/SearchMovie";
 import "./movies.css";
 

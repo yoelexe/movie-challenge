@@ -3,6 +3,7 @@ import "./searchMovie.css";
 import apiConfig from "../../../api/apiConfig";
 import { useEffect, useState } from "react";
 import { CardMovie } from "./CardMovie";
+// import { Modal } from "./Modal";
 // import { CardMovie } from "./CardMovie";
 // import { CardMovie } from "./CardMovie";
 
@@ -28,12 +29,14 @@ export const SearchMovie = () => {
     handleInput();
   });
 
+  const [openModal, setOpenModal] = useState(false);
+
   return (
     <>
       <section className="container-search">
-        <h2>Enter the name of the movie</h2>
-
-        <div className="search">
+        {/* <h2>Enter the name of the movie</h2> */}
+        {/* fixed bg-white z-10 w-full*/}
+        <div className="search ">
           <FiSearch className="icon-search" onClick={handleInput} />
           <input
             className="search-all"
@@ -44,9 +47,15 @@ export const SearchMovie = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
           ></input>
         </div>
-        {/* <button>
-          <FiSliders/>
-        </button> */}
+         <div>
+         <button onClick={() => setOpenModal(!openModal)}>
+          {/* <FiSliders /> */}
+        </button>
+        {/* <Modal>
+          state={openModal}
+          changeState={setOpenModal}
+        </Modal> */}
+         </div>
         <hr></hr>
       </section>
       <section className="container-result px-10 py-10">
