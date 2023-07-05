@@ -1,4 +1,4 @@
-import { FilterMovie } from "./filter/FilterMovie";
+// import { FilterMovie } from "./filter/FilterMovie";
 import { SearchMovie } from "./search/SearchMovie";
 import "./movies.css";
 
@@ -17,9 +17,9 @@ export const Movies = () => {
           Search
         </h2>
         <div className="home_panelList-wrap">
-          <div className="home_panel-wrap">
+          {/* <div className="home_panel-wrap">
             <FilterMovie />
-          </div>
+          </div> */}
 
           <div className="home_list-wrap">
             <SearchMovie />
