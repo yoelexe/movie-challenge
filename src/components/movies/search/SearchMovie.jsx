@@ -2,6 +2,8 @@ import { FiSearch } from "react-icons/fi";
 import "./searchMovie.css";
 import apiConfig from "../../../api/apiConfig";
 import { useEffect, useState } from "react";
+import { CardMovie } from "./CardMovie";
+// import { CardMovie } from "./CardMovie";
 // import { CardMovie } from "./CardMovie";
 
 export const SearchMovie = () => {
@@ -24,12 +26,12 @@ export const SearchMovie = () => {
 
   useEffect(() => {
     handleInput();
-  },);
+  });
 
   return (
     <>
       <section className="container-search">
-        <h2>Search</h2>
+        <h2>Enter the name of the movie</h2>
 
         <div className="search">
           <FiSearch className="icon-search" onClick={handleInput} />
@@ -49,13 +51,15 @@ export const SearchMovie = () => {
       </section>
       <section className="container-result ">
         <div>
-        {movies.map((movie) => (
-          <div key={movie.id}>
-            <h3>{movie.title}</h3>
-            {/* <p>{movie.overview}</p> */}
-            {/* Resto de los detalles de la película */}
-          </div>
-        ))}
+        {
+          movies.length > 0 ? (
+            movies.map(movie => {
+              <CardMovie movieID={movie} key={movie}/>
+            })
+          ) : (
+            <p>Couldnt find any movie.</p>
+          )
+        }
         </div>
       </section>
     </>
