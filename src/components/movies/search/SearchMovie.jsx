@@ -3,7 +3,7 @@ import "./searchMovie.css";
 import apiConfig from "../../../api/apiConfig";
 import { useEffect, useState } from "react";
 import { CardMovie } from "./CardMovie";
-// import { Modal } from "./Modal";
+import { Modal } from "./Modal";
 // import { CardMovie } from "./CardMovie";
 // import { CardMovie } from "./CardMovie";
 
@@ -47,38 +47,41 @@ export const SearchMovie = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
           ></input>
         </div>
-         <div>
-         <button onClick={() => setOpenModal(!openModal)}>
-          {/* <FiSliders /> */}
-        </button>
-        {/* <Modal>
+        <div>
+          <button onClick={() => setOpenModal(true)}>Open Modal</button>
+          {openModal && <Modal onClose={() => setOpenModal(false)} />}
+          {/* <Modal>
           state={openModal}
           changeState={setOpenModal}
         </Modal> */}
-         </div>
+        </div>
         <hr></hr>
       </section>
       <section className="container-result px-10 py-10">
         <div className="movies-result">
           {movies.map((movie) => (
             <div key={movie.id} className="article">
-              <CardMovie imgSrc={movie?.poster_path} >
-              <h3 className="text-xl font-bold mb-2">{movie.title}</h3>
-              {/* <p>{movie.overview}</p> */}
-              <div className="space-x-4 mt-4">
-                <button className="btn
+              <CardMovie imgSrc={movie?.poster_path}>
+                <h3 className="text-xl font-bold mb-2">{movie.title}</h3>
+                {/* <p>{movie.overview}</p> */}
+                <div className="space-x-4 mt-4">
+                  <button
+                    className="btn
                 bg-[#050708]
-                rounded-lg text-sm px-2.5 py-2.5 text-center inline-flex items-center">
-                  <FiHeart />
-                </button>
+                rounded-lg text-sm px-2.5 py-2.5 text-center inline-flex items-center"
+                  >
+                    <FiHeart />
+                  </button>
 
-                <button className="btn bg-[#050708]
-                rounded-lg text-sm px-2.5 py-2.5 text-center inline-flex items-center">
-                  <FiBookmark />
-                </button>
-              </div>
+                  <button
+                    className="btn bg-[#050708]
+                rounded-lg text-sm px-2.5 py-2.5 text-center inline-flex items-center"
+                  >
+                    <FiBookmark />
+                  </button>
+                </div>
               </CardMovie>
-              
+
               {/* <p>{movie.overview}</p> */}
             </div>
           ))}
