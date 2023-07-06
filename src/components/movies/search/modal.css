@@ -47,6 +47,7 @@
   background: none;
   transition: .3s ease;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 /* 

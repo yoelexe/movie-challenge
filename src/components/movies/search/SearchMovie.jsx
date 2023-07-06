@@ -48,12 +48,8 @@ export const SearchMovie = () => {
           ></input>
         </div>
         <div>
-          <button onClick={() => setOpenModal(true)}>Open Modal</button>
-          {openModal && <Modal onClose={() => setOpenModal(false)} />}
-          {/* <Modal>
-          state={openModal}
-          changeState={setOpenModal}
-        </Modal> */}
+          <button onClick={() => {setOpenModal(true)}}>Open</button>
+          { openModal && <Modal closeModal={setOpenModal}/>}
         </div>
         <hr></hr>
       </section>
