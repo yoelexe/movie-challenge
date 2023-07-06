@@ -4,6 +4,7 @@ import apiConfig from "../../../api/apiConfig";
 import { useEffect, useState } from "react";
 import { CardMovie } from "./CardMovie";
 import { Modal } from "./Modal";
+import { MovieList } from "./MovieList";
 // import { CardMovie } from "./CardMovie";
 // import { CardMovie } from "./CardMovie";
 
@@ -55,32 +56,38 @@ export const SearchMovie = () => {
       </section>
       <section className="container-result px-10 py-10">
         <div className="movies-result">
-          {movies.map((movie) => (
-            <div key={movie.id} className="article">
-              <CardMovie imgSrc={movie?.poster_path}>
-                <h3 className="text-xl font-bold mb-2">{movie.title}</h3>
-                {/* <p>{movie.overview}</p> */}
-                <div className="space-x-4 mt-4">
-                  <button
-                    className="btn
-                bg-[#050708]
-                rounded-lg text-sm px-2.5 py-2.5 text-center inline-flex items-center"
-                  >
-                    <FiHeart />
-                  </button>
-
-                  <button
-                    className="btn bg-[#050708]
-                rounded-lg text-sm px-2.5 py-2.5 text-center inline-flex items-center"
-                  >
-                    <FiBookmark />
-                  </button>
+          {
+            movies.length > 0 ? (
+              movies.map((movie) => (
+                <div key={movie.id} className="article">
+                  <CardMovie imgSrc={movie?.poster_path}>
+                    <h3 className="text-xl font-bold mb-2">{movie.title}</h3>
+                    {/* <p>{movie.overview}</p> */}
+                    <div className="space-x-4 mt-4">
+                      <button
+                        className="btn
+                    bg-[#050708]
+                    rounded-lg text-sm px-2.5 py-2.5 text-center inline-flex items-center"
+                      >
+                        <FiHeart />
+                      </button>
+    
+                      <button
+                        className="btn bg-[#050708]
+                    rounded-lg text-sm px-2.5 py-2.5 text-center inline-flex items-center"
+                      >
+                        <FiBookmark />
+                      </button>
+                    </div>
+                  </CardMovie>
+    
+                  {/* <p>{movie.overview}</p> */}
                 </div>
-              </CardMovie>
-
-              {/* <p>{movie.overview}</p> */}
-            </div>
-          ))}
+              ))
+            ) : (
+              <MovieList />
+            )
+          }
         </div>
       </section>
     </>

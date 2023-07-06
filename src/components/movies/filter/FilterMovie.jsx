@@ -9,12 +9,13 @@ export const FilterMovie = () => {
 
   useEffect(() => {
     const fetchMovies = async () => {
-      const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiConfig.apiKey}&with_genres=${genre}`;
+      const url = `${apiConfig.baseUrl}/discover/movie?with_genres=${genre}&api_key=${apiConfig.apiKey}`;
 
       try {
         const response = await fetch(url);
         const data = await response.json();
         setMovies(data.results);
+        console.log(data.results)
       } catch (err) {
         console.log("Error", err)
       }
@@ -22,6 +23,7 @@ export const FilterMovie = () => {
 
     fetchMovies();
   }, [genre])
+
 
   return (
     <div>
