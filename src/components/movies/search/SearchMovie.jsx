@@ -33,7 +33,7 @@ export const SearchMovie = () => {
 
   return (
     <>
-      <section className="container-search">
+      <section className="container-search flex items-center" >
         {/* <h2>Enter the name of the movie</h2> */}
         {/* fixed bg-white z-10 w-full*/}
         <div className="search ">
