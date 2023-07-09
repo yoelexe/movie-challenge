@@ -3,8 +3,9 @@ import { FiX } from "react-icons/fi";
 import { FilterMovie } from "../filter/FilterMovie";
 import "./modal.css";
 import { useEffect } from "react";
+import apiConfig from "../../../api/apiConfig";
 // eslint-disable-next-line react/prop-types
-export const Modal = ({ closeModal }) => {
+export const Modal = ({ closeModal, onSetFilteredMovie }) => {
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {
@@ -22,7 +23,7 @@ export const Modal = ({ closeModal }) => {
           <button className="btn-cerrar" onClick={() => {
             closeModal(false)
           }}><FiX/></button>
-          <FilterMovie></FilterMovie>
+          <FilterMovie apiKey={apiConfig.apiKey} onSetFilteredMovie={onSetFilteredMovie}></FilterMovie>
         </div>
       </div>
     </>

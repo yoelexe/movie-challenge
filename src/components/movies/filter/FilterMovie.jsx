@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import apiConfig from "../../../api/apiConfig";
 
-export const FilterMovie = () => {
+export const FilterMovie = ({onSetFilteredMovie}) => {
 
-  const [movies, setMovies] = useState([]);
+  // const [movies, setMovies] = useState([]);
   /* const [sortBy, setSortBy] = useState("popularity.desc") */
   const [genre, setGenre] = useState("");
 
@@ -14,26 +15,25 @@ export const FilterMovie = () => {
       try {
         const response = await fetch(url);
         const data = await response.json();
-        setMovies(data.results);
-        console.log(data.results)
+        onSetFilteredMovie(data.results);
       } catch (err) {
         console.log("Error", err)
       }
     }
 
     fetchMovies();
-  }, [genre])
+  }, [genre, onSetFilteredMovie])
 
 
   return (
     <div>
       {/* category */}
-      <h3>Section Filter</h3>
+      {/* <h3>Section Filter</h3> */}
 
       <section className="flex flex-col	">
       <label>Escoger por género:</label>
       <select value={genre} onChange={(e) => setGenre(e.target.value)}>
-        <option value="" >
+        <option value="" selected disabled hidden>
           All genres
         </option>
         <option value="28">Action</option>
@@ -44,10 +44,11 @@ export const FilterMovie = () => {
       </select>
       </section>
       <ul>
-        {
+        {/*
           movies.map((movie) => {
             <li key={movie.id}>{movie.title}</li>
           })
+          */
         }
       </ul>
     </div>
