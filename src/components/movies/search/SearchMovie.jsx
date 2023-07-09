@@ -31,6 +31,7 @@ export const SearchMovie = () => {
     handleInput();
   });
 
+  // la función para establecer la pelicula filtrada en el estado 
   const handleSetFilteredMovie = (data) => {
     setFilteredMovie(data);
   };
@@ -96,8 +97,8 @@ export const SearchMovie = () => {
                 </CardMovie>
               </div>
             ))
-          ) : (
-            <MovieList></MovieList>
+          ) : filteredMovie ? <p>Filtrando</p> : (
+          <MovieList ></MovieList>
           )}
         </div>
       </section>
