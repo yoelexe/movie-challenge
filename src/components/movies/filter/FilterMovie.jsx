@@ -33,7 +33,7 @@ export const FilterMovie = ({onSetFilteredMovie}) => {
       <section className="flex flex-col	">
       <label>Escoger por género:</label>
       <select value={genre} onChange={(e) => setGenre(e.target.value)}>
-        <option value="" selected disabled hidden>
+        <option value="" disabled>
           All genres
         </option>
         <option value="28">Action</option>

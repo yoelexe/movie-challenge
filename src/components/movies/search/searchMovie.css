@@ -48,13 +48,15 @@
 .search{
   display: inline-flex;
   align-items: center;
-  
-  padding: 1rem;
+  padding: 10px; /*1rem*/
+  border-radius: 10px;
+  margin-inline: 40px;
+  background-color: #ccc;
 }
 
 .search .icon-search{
   color: rgb(0, 0, 0, 0.26);
-  margin-right: 2rem;
+  margin-right: 1.5rem;
 }
 
 
@@ -63,6 +65,7 @@
   outline: none;
   border-bottom: 1px solid;
   width: 500px;
+  background-color: #ccc;
 }
 
 .search .search-all::placeholder{

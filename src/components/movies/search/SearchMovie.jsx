@@ -1,4 +1,4 @@
-import { FiBookmark, FiHeart, FiSearch } from "react-icons/fi";
+import { FiBookmark, FiSliders, FiHeart, FiSearch } from "react-icons/fi";
 import "./searchMovie.css";
 import apiConfig from "../../../api/apiConfig";
 import { useEffect, useState } from "react";
@@ -40,7 +40,7 @@ export const SearchMovie = () => {
 
   return (
     <>
-      <section className="container-search flex items-center">
+      <section className="container-search ">
         {/* <h2>Enter the name of the movie</h2> */}
         {/* fixed bg-white z-10 w-full*/}
         <div className="search ">
@@ -60,7 +60,7 @@ export const SearchMovie = () => {
               setOpenModal(true);
             }}
           >
-            Open
+            <FiSliders /> All filters
           </button>
           {openModal && (
             <Modal
@@ -69,6 +69,8 @@ export const SearchMovie = () => {
             />
           )}
         </div>
+
+        Total items: 10
         <hr></hr>
       </section>
       <section className="container-result px-10 py-10">
@@ -97,7 +99,10 @@ export const SearchMovie = () => {
                 </CardMovie>
               </div>
             ))
-          ) : filteredMovie ? <p>Filtrando</p> : (
+          ) : filteredMovie  ? 
+          (
+            <p>Filtrando...</p>
+          ) : (
           <MovieList ></MovieList>
           )}
         </div>
