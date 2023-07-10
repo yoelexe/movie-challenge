@@ -44,7 +44,7 @@ export const SearchMovie = () => {
         {/* <h2>Enter the name of the movie</h2> */}
         {/* fixed bg-white z-10 w-full*/}
         <div className="search ">
-        <FiSearch className="icon-search" onClick={handleInput} />
+        <FiSearch className="icon-search" onClick={() => handleInput(searchTerm)} />
           <input
             className="search-all"
             type="text"
@@ -101,7 +101,29 @@ export const SearchMovie = () => {
             ))
           ) : filteredMovie  ? 
           (
-            <p>Filtrando...</p>
+            filteredMovie.map((movie) => (
+              <div key={movie.id} className="article">
+                <CardMovie imgSrc={movie?.poster_path}>
+                  <h3 className="text-xl font-bold mb-2">{movie.title}</h3>
+                  <div className="space-x-4 mt-4">
+                    <button
+                      className="btn
+                    bg-[#050708]
+                    rounded-lg text-sm px-2.5 py-2.5 text-center inline-flex items-center"
+                    >
+                      <FiHeart />
+                    </button>
+
+                    <button
+                      className="btn bg-[#050708]
+                    rounded-lg text-sm px-2.5 py-2.5 text-center inline-flex items-center"
+                    >
+                      <FiBookmark />
+                    </button>
+                  </div>
+                </CardMovie>
+              </div>
+            ))
           ) : (
           <MovieList ></MovieList>
           )}
