@@ -1,5 +1,5 @@
 import { FiSearch } from "react-icons/fi"
-import styles from "./searchMovie.css";
+import "./searchMovie.css";
 import apiConfig from "../../../api/apiConfig";
 import { useEffect, useState } from "react";
 import { CardMovie } from "./CardMovie";
@@ -42,7 +42,7 @@ export const SearchMovie = () => {
       <section className="container-search flex items-center">
         {/* <h2>Enter the name of the movie</h2> */}
         {/* fixed bg-white z-10 w-full*/}
-        <div className={styles.search}>
+        <div className="search">
           
           <FiSearch
             className="icon-search"
