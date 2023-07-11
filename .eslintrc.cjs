@@ -1,6 +1,5 @@
 module.exports =  {
-  env: { browser: true, es2020: true, "jest/globals": true },
-  files: ['*.test.js', '*.spec.js', '*.test.jsx'],
+  env: { browser: true, es2020: true, 'jest/globals': true },
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',

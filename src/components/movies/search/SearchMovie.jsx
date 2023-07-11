@@ -8,7 +8,6 @@ import { MovieList } from "./MovieList";
 import { FilterMovie } from "../filter/FilterMovie";
 
 export const SearchMovie = () => {
-  // const [query, setQuery] = useState("");
 
   const [searchTerm, setSearchTerm] = useState("");
   const [movies, setMovies] = useState([]);
@@ -40,13 +39,12 @@ export const SearchMovie = () => {
   return (
     <>
       <section className="container-search flex items-center">
-        {/* <h2>Enter the name of the movie</h2> */}
-        {/* fixed bg-white z-10 w-full*/}
+        {/* fixed bg-white z-10 w-full -> fi=onClick={() => handleInput(searchTerm)}*/}
         <div className="search">
           
           <FiSearch
             className="icon-search"
-            onClick={() => handleInput(searchTerm)}
+            
           />
           <input
             className="search-all"
