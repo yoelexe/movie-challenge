@@ -27,8 +27,6 @@ export const FilterMovie = ({onSetFilteredMovie}) => {
 
   return (
     <div>
-      {/* category */}
-      {/* <h3>Section Filter</h3> */}
 
       <section className="flex flex-col	">
       <label>Escoger por género:</label>
@@ -43,14 +41,6 @@ export const FilterMovie = ({onSetFilteredMovie}) => {
         <option value="80">Crime</option>
       </select>
       </section>
-      <ul>
-        {/*
-          movies.map((movie) => {
-            <li key={movie.id}>{movie.title}</li>
-          })
-          */
-        }
-      </ul>
     </div>
   );
 };

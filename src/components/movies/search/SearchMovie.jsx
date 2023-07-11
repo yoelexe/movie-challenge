@@ -1,13 +1,11 @@
-import {FiSliders, FiSearch } from "react-icons/fi";
-import "./searchMovie.css";
+import { FiSearch } from "react-icons/fi"
+import styles from "./searchMovie.css";
 import apiConfig from "../../../api/apiConfig";
 import { useEffect, useState } from "react";
 import { CardMovie } from "./CardMovie";
-import { Modal } from "../modal/Modal";
+/* import { Modal } from "../modal/Modal"; */
 import { MovieList } from "./MovieList";
 import { FilterMovie } from "../filter/FilterMovie";
-// import { CardMovie } from "./CardMovie";
-// import { CardMovie } from "./CardMovie";
 
 export const SearchMovie = () => {
   // const [query, setQuery] = useState("");
@@ -33,18 +31,19 @@ export const SearchMovie = () => {
   });
 
   // la función para establecer la pelicula filtrada en el estado
-  const handleSetFilteredMovie = (data) => {
+/*   const handleSetFilteredMovie = (data) => {
     setFilteredMovie(data);
   };
 
-  const [openModal, setOpenModal] = useState(false);
+  const [openModal, setOpenModal] = useState(false); */
 
   return (
     <>
-      <section className="container-search ">
+      <section className="container-search flex items-center">
         {/* <h2>Enter the name of the movie</h2> */}
         {/* fixed bg-white z-10 w-full*/}
-        <div className="search ">
+        <div className={styles.search}>
+          
           <FiSearch
             className="icon-search"
             onClick={() => handleInput(searchTerm)}
@@ -58,7 +57,7 @@ export const SearchMovie = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
           ></input>
         </div>
-        <div>
+        {/* <div>
           <button
             onClick={() => {
               setOpenModal(true);
@@ -72,12 +71,11 @@ export const SearchMovie = () => {
               onSetFilteredMovie={handleSetFilteredMovie}
             />
           )}
-        </div>
+        </div> */}
         <FilterMovie
           apiKey={apiConfig.apiKey}
           onSetFilteredMovie={setFilteredMovie}
         ></FilterMovie>
-        Total items: 10
         <hr></hr>
       </section>
       <section className="container-result px-10 py-10">

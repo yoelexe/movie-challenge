@@ -11,6 +11,7 @@ export const Movies = () => {
             fontWeight: "600",
             paddingBottom: "10px",
             paddingTop: "20px",
+            paddingLeft: "35px"
           }}
         >
           Search

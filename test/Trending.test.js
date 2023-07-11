@@ -1,14 +1,20 @@
-import '@testing-library/jest-dom/extend-expect'
-import { render, screen, test, expect } from '@testing-library/react'
-import { Trending } from '../src/components/home/trending/Trending'
-import '@testing-library/jest-dom'
+import "@testing-library/jest-dom/extend-expect";
+import { render } from "@testing-library/react";
+import {App } from "../src/App";
+import "@testing-library/jest-dom"
 
-test('renders button with correct text', async () => {
-  // renderizar el componente
-  render(<Trending />)
+// como interactua el usuario con el componente
+// consulta el DOM para identificar que esta courriendo
 
-  await screen.findByText('Now In Cinemas');
-  const moviePoster = screen.getAllByRole('img', {name: /poster/i});
-  expect(moviePoster.length).toBeGreaterThan(0);
+// describe -> describir el comportamiento, el callbak de la derecha, la logica a seguir
+// mock, tratar de controar, variables y metodos con lo que esperamos
+
+describe("App", () => {
+  it('renders button with correct text', () => {
+    // renderizar el componente
+    const sut = render(<App />)
+  
+    const title = sut.getByAltText("Now In Cinemas");
+    expect(title).toBeInTheDocument();
+  })
 })
-

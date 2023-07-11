@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./movieDetail.css";
-import { FiHeart, FiPlay } from "react-icons/fi";
+import { FiCalendar, FiClock, FiHeart, FiStar, FiTag } from "react-icons/fi";
 import apiConfig from "../../../api/apiConfig";
 
 export const MoviesDetail = () => {
@@ -35,14 +35,6 @@ export const MoviesDetail = () => {
       .catch((error) => {
         console.error("Error:", error);
       });
-    /* if(consult.ok){
-      const data = await consult.json()
-      const data01 = data.cast.map((actor) => actor.name)
-      const final = data01.slice(0, 5)
-      console.log(final)
-      // setCredits(data);
-
-    } */
   };
 
   // const url = 'https://api.themoviedb.org/3/movie/movie_id?api_key=49e8c67adf3bbd50a3fce82777bba341'
@@ -88,56 +80,42 @@ export const MoviesDetail = () => {
                   )})`,
                 }}
               ></div>
-              
-              <div className="flex flex-col">
-              <span>Date: {information.release_date}</span>
-            <span>Rating: {information.vote_average}</span>
-            <span>Duration: {toTime(information.runtime)}</span>
+
+              <div className="flex flex-col my-8">
+                <FiCalendar />
+
+                <p>Date</p>
+                <span>{information.release_date}</span>
+                <FiStar />
+                <p>Rating</p>
+                <span>{information.vote_average} / 10</span>
+                <FiClock />
+                <p>Duration</p>
+                <span>{toTime(information.runtime)}</span>
               </div>
             </div>
           </section>
 
-          
-
           <section className="second-section">
-          <h2>{information.title} </h2>
-          <h3>The Sypnopsis</h3>
-          <p>{information.overview}</p>
+            <h2 className="my-5">{information.title} </h2>
+            <h3>The Sypnopsis</h3>
+            <p>{information.overview}</p>
             {/* <span>{information.popularity}</span> */}
-            <div>
-              <a
-                style={{
-                  display: "flex",
-                  border: "1px solid white",
-                  borderRadius: "5px",
-                  justifyContent: "space-around",
-                }}
-                className="w-20 items-center justify-center my-3 cursor-pointer"
-              >
-                <FiPlay className="my-3" />
-                Trailer
-              </a>
+            <div className="flex items-center my-5">
+              <button className="add-to-cart">
+                <FiTag className="text-xl	mx-2" />
+                <span>Booking</span>
+              </button>
               <button className="favorite">
                 <FiHeart />
               </button>
             </div>
-            
+
             {/* <span>{information.genres.map((nombre) => nombre.name).join(" • ")}</span> */}
           </section>
 
           <section className="thrid-section">
             <h3>The Actors</h3>
-            {/* <p>{cast}<br/></p> */}
-            {/* {
-            cast.map((actor) => (
-              <table key={actor.id}>
-                <tr >
-                <td>{actor.name[0]}</td>
-              </tr>
-              
-              </table>
-            ))
-          } */}
             <p>{cast[0]}</p>
             <p>{cast[1]}</p>
             <p>{cast[2]}</p>

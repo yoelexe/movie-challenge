@@ -1,54 +1,7 @@
-
-
-/* .search{
-  width: 300px;
-  vertical-align: middle;
-  white-space: nowrap;
-  position: relative;
-}
-
-.search .search-all{
-  width: 300px;
-  height: 50px;
-  background: #2b303b;
-  border: none;
-  font-size: 10pt;
-  color: #262626;
-  padding-left: 45px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-
-  -webkit-transition: all .55s ease;
-  -moz-transition: all .55s ease;
-  -ms-transition: all .55s ease;
-  -o-transition: all .55s ease;
-  transition: all .55s ease;
-}
-
-.search .search-all::-webkit-input-placeholder{
-  color: #65737e;
-}
-
-.search .icon-search{
-  position: absolute;
-  top: 35%;
-  margin-left: 17px;
-  
-  z-index: 1;
-  color: #4f5b66;
-}
-
-.search .search-all:focus,
-.search .search-all:active{
-  outline: none;
-  background: white;
-} */
-
 .search{
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  padding: 10px; /*1rem*/
+  padding: 10px; 
   border-radius: 10px;
   margin-inline: 40px;
   background-color: #ccc;

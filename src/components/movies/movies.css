@@ -26,14 +26,14 @@
 }
 
 .home_list-wrap::-webkit-scrollbar{
-  width: 12px;
+  width: 10px;
 }
 
 .home_list-wrap::-webkit-scrollbar-track{
-  background-color: green;
+  background-color: #1e293b;
 }
 
 .home_list-wrap::-webkit-scrollbar-thumb{
-  background-color: antiquewhite;
+  background-color: #cbd5e1;
   /* border-radius: 10px; */
 }

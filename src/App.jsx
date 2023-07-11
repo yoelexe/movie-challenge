@@ -21,6 +21,7 @@ function App() {
 
   return (
     <>
+    <h3>Now In Cinemas</h3>
       <Header />
       <Routes>
         <Route path="/" element={<Home />}></Route>

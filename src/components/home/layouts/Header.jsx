@@ -29,7 +29,7 @@ export const Header = () => {
   return (
     <>
       {/* Header */}
-      <header className="bg-late-100 shadow-md relative">
+      <header className="bg-black shadow-md text-white relative">
         {/* px-8 absolute z-50 */}
         <div className="container mx-auto px-8">
           <div className="grid grid-cols-3 h-10 items-center">
@@ -37,7 +37,7 @@ export const Header = () => {
             <div className="flex justify-start">
               <div className="relative">
               <a className="menu-open-btn" onClick={menuOpenBtn}><FiMenu className="h-6 w-6 cursor-pointer"/></a>
-              <nav className="offcanvas-menu fixed bg-white h-screen top-0 z-10 left-0
+              <nav className="offcanvas-menu fixed bg-black h-screen top-0 z-10 left-0
               md:w-1/6 w-2/3 shadow-md flex items-center px-8 -translate-x-full duration-300">
                 <a className="menu-close-btn absolute top-6 right-6 mx-2 my-2" onClick={menuCloseBtn}>
                   <FiX className="cursor-pointer dark:hover:text-white hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-600
@@ -45,15 +45,18 @@ export const Header = () => {
                 </a>
                 <ul>
                   <li className="my-5">
-                    <a className="text-xl hover:text-red-500 cursor-pointer duration-300" href="/">Home</a></li>
+                    <a className="text-xl hover:text-[#F2C36B] cursor-pointer duration-300" href="/">Home</a></li>
                   <li className="my-5">
-                    <a className="text-xl hover:text-red-500 cursor-pointer" href="/movies">Movies</a></li>
+                    <a className="text-xl hover:text-[#F2C36B] cursor-pointer" href="/movies">Movies</a></li>
+                    <li className="my-5">
+                    <a className="text-xl hover:text-[#F2C36B] cursor-pointer">Snacks</a></li>
                   <li className="my-5">
-                    <a className="text-xl hover:text-red-500 cursor-pointer">Favorite</a></li>
+                    <a className="text-xl hover:text-[#F2C36B] cursor-pointer">Favorite</a></li>
                   <li className="my-5">
-                    <a className="text-xl hover:text-red-500 cursor-pointer">User</a></li>
+                    <a className="text-xl hover:text-[#F2C36B] cursor-pointer">User</a></li>
                   <li className="my-5">
-                    <a className="text-xl hover:text-red-500 cursor-pointer">Log Out</a></li>
+                    <a className="text-xl hover:text-[#F2C36B] cursor-pointer">Log Out</a></li>
+                    
                 </ul>
               </nav>
               </div>
