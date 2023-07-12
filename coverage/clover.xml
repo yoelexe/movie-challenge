@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1689102779993" clover="3.2.0">
-  <project timestamp="1689102779993" name="All files">
-    <metrics statements="125" coveredstatements="32" conditionals="22" coveredconditionals="6" methods="50" coveredmethods="10" elements="197" coveredelements="48" complexity="0" loc="125" ncloc="125" packages="13" files="17" classes="17"/>
+<coverage generated="1689125260859" clover="3.2.0">
+  <project timestamp="1689125260859" name="All files">
+    <metrics statements="125" coveredstatements="38" conditionals="22" coveredconditionals="6" methods="50" coveredmethods="13" elements="197" coveredelements="57" complexity="0" loc="125" ncloc="125" packages="13" files="17" classes="17"/>
     <package name="src">
       <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <file name="App.jsx" path="C:\Users\Hogar\Desktop\Laboratoria\movie-challenge\src\App.jsx">
@@ -24,27 +24,27 @@
       </file>
     </package>
     <package name="src.components.auth">
-      <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="Login.jsx" path="C:\Users\Hogar\Desktop\Laboratoria\movie-challenge\src\components\auth\Login.jsx">
-        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="3" count="0" type="stmt"/>
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.components.error">
-      <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="Error.jsx" path="C:\Users\Hogar\Desktop\Laboratoria\movie-challenge\src\components\error\Error.jsx">
-        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.components.home">
       <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <file name="Home.jsx" path="C:\Users\Hogar\Desktop\Laboratoria\movie-challenge\src\components\home\Home.jsx">
         <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.components.home.carousel">
@@ -66,11 +66,11 @@
       </file>
     </package>
     <package name="src.components.home.layouts">
-      <metrics statements="12" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+      <metrics statements="12" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="1"/>
       <file name="Footer.jsx" path="C:\Users\Hogar\Desktop\Laboratoria\movie-challenge\src\components\home\layouts\Footer.jsx">
-        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="3" count="0" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
       </file>
       <file name="Header.jsx" path="C:\Users\Hogar\Desktop\Laboratoria\movie-challenge\src\components\home\layouts\Header.jsx">
         <metrics statements="10" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
