@@ -81,17 +81,22 @@ export const MoviesDetail = () => {
                 }}
               ></div>
 
-              <div className="flex flex-col my-8">
-                <FiCalendar />
-
-                <p>Date</p>
-                <span>{information.release_date}</span>
-                <FiStar />
+              <div className="itemsofmovie">
+                <div>
+                  <FiCalendar className="icon"/>
+                  <p>Date</p>
+                  <span>{information.release_date}</span>
+                </div>
+                <div>
+                <FiStar className="icon"/>
                 <p>Rating</p>
                 <span>{information.vote_average} / 10</span>
-                <FiClock />
+                </div>
+                <div>
+                <FiClock className="icon"/>
                 <p>Duration</p>
                 <span>{toTime(information.runtime)}</span>
+                </div>
               </div>
             </div>
           </section>
@@ -116,11 +121,13 @@ export const MoviesDetail = () => {
 
           <section className="thrid-section">
             <h3>The Actors</h3>
-            <p>{cast[0]}</p>
-            <p>{cast[1]}</p>
-            <p>{cast[2]}</p>
-            <p>{cast[3]}</p>
-            <p>{cast[4]}</p>
+            <ol>
+            <li>{cast[0]}</li>
+            <li>{cast[1]}</li>
+            <li>{cast[2]}</li>
+            <li>{cast[3]}</li>
+            <li>{cast[4]}</li>
+            </ol>
           </section>
         </div>
       </div>

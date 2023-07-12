@@ -19,9 +19,9 @@ export const Trending = () => {
   }, []);
 
   return (
-    <section className="bg-black py-10 px-14">
+    <section className="bg-late-200 py-10 px-14">
       <div className="flex justify-between items-center">
-      <h3 className="text-xl font-medium text-gray-100">Now In Cinemas</h3>
+      <h3 className="text-xl font-medium text-black">Now In Cinemas</h3>
       <Link to={`/movies`} className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600 cursor-pointer">See all</Link>
       </div>
       {/* grid card */}

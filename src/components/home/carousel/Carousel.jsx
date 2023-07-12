@@ -11,7 +11,7 @@ export const Carousel = () => {
       url: 'https://images.hdqwalls.com/wallpapers/fast-x-movie-8k-t5.jpg'
     },
     {
-      url: 'https://i.pinimg.com/originals/95/52/4d/95524d488344134014e7afdaf3ab7adc.jpg'
+      url: 'https://i0.wp.com/plexmx.info/wp-content/uploads/2023/04/Transformers-Rise-of-the-Beasts-Banner.jpg?ssl=1'
     },
   ];
 
