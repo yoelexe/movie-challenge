@@ -20,9 +20,7 @@ export const Modal = ({ closeModal, onSetFilteredMovie }) => {
           <div className="encabezado-modal">
             <h2>Contenido</h2>
           </div>
-          <button className="btn-cerrar" onClick={() => {
-            closeModal(false)
-          }}><FiX/></button>
+          <button className="btn-cerrar" onClick={() => {closeModal(false)}}><FiX/></button>
           <FilterMovie apiKey={apiConfig.apiKey} onSetFilteredMovie={onSetFilteredMovie}></FilterMovie>
         </div>
       </div>

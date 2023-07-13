@@ -6,13 +6,14 @@ import apiConfig from "../../../api/apiConfig";
 
 export const MoviesDetail = () => {
   const [information, setInformation] = useState([]);
-  const [cast, setCast] = useState([]);
+  const [actors, setActors] = useState([]);
+  const [genres, setGenres] = useState([]);
 
   let { moviesId } = useParams();
 
   const fetchInformation = async () => {
     const result = await fetch(
-      `https://api.themoviedb.org/3/movie/${moviesId}?api_key=49e8c67adf3bbd50a3fce82777bba341&language=en-US`
+      `https://api.themoviedb.org/3/movie/${moviesId}?api_key=${apiConfig.apiKey}&language=en-US`
     );
     if (result.ok) {
       const data = await result.json();
@@ -21,21 +22,35 @@ export const MoviesDetail = () => {
     }
   };
 
+  useEffect(() => {
+    const fetchGenres = async () => {
+      const response = await fetch(
+        `https://api.themoviedb.org/3/movie/${moviesId}?api_key=${apiConfig.apiKey}&language=en-US`
+      );
+      const data = await response.json();
+
+      /* console.log(data.genres.map((hola) => hola.name)); */
+      setGenres(data.genres);
+    };
+
+    fetchGenres();
+  }, [moviesId]);
+
   // backslash \ alt + 92
 
-  const fetchCredits = async () => {
-    fetch(
-      `https://api.themoviedb.org/3/movie/${moviesId}/credits?api_key=49e8c67adf3bbd50a3fce82777bba341`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        const actors = data.cast.map((actor) => actor.name).slice(0, 5);
-        setCast(actors);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  };
+  useEffect(() => {
+    const fetchActors = async () => {
+      const response = await fetch(
+        `https://api.themoviedb.org/3/movie/${moviesId}/credits?api_key=${apiConfig.apiKey}`
+      );
+      if (response.ok) {
+        const data = await response.json();
+        setActors(data.cast.slice(0, 5));
+      }
+    };
+
+    fetchActors();
+  }, [moviesId]);
 
   // const url = 'https://api.themoviedb.org/3/movie/movie_id?api_key=49e8c67adf3bbd50a3fce82777bba341'
 
@@ -43,9 +58,6 @@ export const MoviesDetail = () => {
     fetchInformation();
   });
 
-  useEffect(() => {
-    fetchCredits();
-  });
   // consumir desde los parametros algunas variantes
 
   // let productSelected = movies.find(movie => movie.id === moviesId)
@@ -59,7 +71,6 @@ export const MoviesDetail = () => {
 
   return (
     <div className="bg-black ">
-      {/*backdrop_path*/}
       <div
         className="banner"
         style={{
@@ -83,19 +94,19 @@ export const MoviesDetail = () => {
 
               <div className="itemsofmovie">
                 <div>
-                  <FiCalendar className="icon"/>
+                  <FiCalendar className="icon" />
                   <p>Date</p>
                   <span>{information.release_date}</span>
                 </div>
                 <div>
-                <FiStar className="icon"/>
-                <p>Rating</p>
-                <span>{information.vote_average} / 10</span>
+                  <FiStar className="icon" />
+                  <p>Rating</p>
+                  <span>{information.vote_average} / 10</span>
                 </div>
                 <div>
-                <FiClock className="icon"/>
-                <p>Duration</p>
-                <span>{toTime(information.runtime)}</span>
+                  <FiClock className="icon" />
+                  <p>Duration</p>
+                  <span>{toTime(information.runtime)}</span>
                 </div>
               </div>
             </div>
@@ -105,7 +116,6 @@ export const MoviesDetail = () => {
             <h2 className="my-5">{information.title} </h2>
             <h3>The Sypnopsis</h3>
             <p>{information.overview}</p>
-            {/* <span>{information.popularity}</span> */}
             <div className="flex items-center my-5">
               <button className="add-to-cart">
                 <FiTag className="text-xl	mx-2" />
@@ -115,24 +125,23 @@ export const MoviesDetail = () => {
                 <FiHeart />
               </button>
             </div>
-
-            {/* <span>{information.genres.map((nombre) => nombre.name).join(" • ")}</span> */}
+            <ul>
+              {genres.map((genre) => (
+                <li key={genre.id}>{genre.name}</li>
+              ))}
+            </ul>
           </section>
 
           <section className="thrid-section">
             <h3>The Actors</h3>
-            <ol>
-            <li>{cast[0]}</li>
-            <li>{cast[1]}</li>
-            <li>{cast[2]}</li>
-            <li>{cast[3]}</li>
-            <li>{cast[4]}</li>
-            </ol>
+            <ul>
+              {actors.map((actor) => (
+                <li key={actor.id}>{actor.name}</li>
+              ))}
+            </ul>
           </section>
         </div>
       </div>
-
-      {/* <div className="video-detail"></div> */}
     </div>
   );
 };

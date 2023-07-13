@@ -2,7 +2,6 @@ import { FiBookmark, FiHeart } from "react-icons/fi";
 
 // eslint-disable-next-line react/prop-types
 export const CardMovie = ({ title, imgSrc }) => {
-  /* let img_path = "https://image.tmdb.org/t/p/w500"; */
   return (
     <>
       <div className="relative rounded-2xl h-full cursor-pointer">
