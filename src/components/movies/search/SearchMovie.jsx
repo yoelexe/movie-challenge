@@ -3,7 +3,6 @@ import "./searchMovie.css";
 import apiConfig from "../../../api/apiConfig";
 import { useEffect, useState } from "react";
 import { CardMovie } from "./CardMovie";
-/* import { Modal } from "../modal/Modal"; */
 import { MovieList } from "./MovieList";
 import { FilterMovie } from "../filter/FilterMovie";
 
@@ -29,13 +28,6 @@ export const SearchMovie = () => {
     handleInput();
   });
 
-  // la función para establecer la pelicula filtrada en el estado
-/*   const handleSetFilteredMovie = (data) => {
-    setFilteredMovie(data);
-  };
-
-  const [openModal, setOpenModal] = useState(false); */
-
   return (
     <>
       <section className="container-search flex items-center">
@@ -55,21 +47,6 @@ export const SearchMovie = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
           ></input>
         </div>
-        {/* <div>
-          <button
-            onClick={() => {
-              setOpenModal(true);
-            }}
-          >
-            <FiSliders /> All filters
-          </button>
-          {openModal && (
-            <Modal
-              closeModal={setOpenModal}
-              onSetFilteredMovie={handleSetFilteredMovie}
-            />
-          )}
-        </div> */}
         <FilterMovie
           apiKey={apiConfig.apiKey}
           onSetFilteredMovie={setFilteredMovie}

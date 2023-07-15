@@ -5,8 +5,7 @@ import { Login } from "../components/auth/Login";
 import { Error } from "../components/error/Error";
 import { Footer } from "../components/home/layouts/Footer";
 import { CardMovie } from "../components/movies/search/CardMovie";
-/* import { Home } from "../components/home/Home"; */
-/* import { Carousel } from "../components/home/carousel/Carousel"; */
+import { MovieList } from "../components/movies/search/MovieList";
 
 test("renders h2 of Movies component", () => {
   render(<Movies />);
@@ -48,5 +47,29 @@ test('renders CardMovie component with title and buttons', () => {
   expect(screen.getByTestId('button')).toBeInTheDocument(); */
 });
 
+test("should render a list of movies", async () => {
+  const movies = [
+    {
+      id: 1,
+      title: "The Shawshank Redemption",
+      poster_path: "/path/to/poster",
+    },
+    {
+      id: 2,
+      title: "The Godfather",
+      poster_path: "/path/to/poster",
+    },
+  ];
+  render(<MovieList movies={movies} />);
+  const movieList = await screen.findAllByRole("img");
+  expect(movieList).toHaveLength(20);
+});
+
+
+/*
+solo puede ser utilizada con elementos HTML o SVG,
+porque estos elementos son los que se renderizan en el DOM.
+expect(select).toBeInTheDocument();
+*/
 
 

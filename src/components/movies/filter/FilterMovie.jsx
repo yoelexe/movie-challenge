@@ -3,9 +3,7 @@ import { useEffect, useState } from "react";
 import apiConfig from "../../../api/apiConfig";
 
 export const FilterMovie = ({onSetFilteredMovie}) => {
-
-  // const [movies, setMovies] = useState([]);
-  /* const [sortBy, setSortBy] = useState("popularity.desc") */
+  
   const [genre, setGenre] = useState("");
 
   useEffect(() => {
@@ -20,8 +18,10 @@ export const FilterMovie = ({onSetFilteredMovie}) => {
         console.log("Error", err)
       }
     }
+    // 3000 -> 3 segundos
+    const timer = setTimeout(() => fetchMovies(), 3000)
 
-    fetchMovies();
+    return () => clearTimeout(timer);
   }, [genre, onSetFilteredMovie])
 
 

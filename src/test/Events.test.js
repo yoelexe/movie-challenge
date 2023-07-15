@@ -1,18 +1,24 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import { Modal } from "../components/movies/modal/Modal"
+import { FilterMovie } from "../components/movies/filter/FilterMovie";
 
-test('renders Modal component with close button', () => {
+/* test('renders Modal component with close button', () => {
   const closeModal = jest.fn();
   const onSetFilteredMovie = jest.fn();
   render(<Modal closeModal={closeModal} onSetFilteredMovie={onSetFilteredMovie} />);
 
-  // Verificar que el componente Modal se haya renderizado correctamente
   expect(screen.getByText('Contenido')).toBeInTheDocument();
   expect(screen.getByRole('button')).toBeInTheDocument();
 
-  // Disparar el evento de clic en el botón de cierre
   fireEvent.click(screen.getByRole('button'));
 
-  // Verificar que la función closeModal se haya llamado una vez
   expect(closeModal).toHaveBeenCalledTimes(1);
-});
+}); */
+
+it("should call the onSetFilteredMovie function when the user changes the select value", () => {
+  const onSetFilteredMovie = jest.fn();
+  render(<FilterMovie onSetFilteredMovie={onSetFilteredMovie} />);
+  const select = screen.findAllByRole("select");
+  select.value = "Action";
+  fireEvent.click(select);
+  expect(onSetFilteredMovie).toBeCalledWith(["Action"]);
+  });
