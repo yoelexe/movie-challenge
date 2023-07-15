@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { FilterMovie } from "../components/movies/filter/FilterMovie";
 
 /* test('renders Modal component with close button', () => {
@@ -14,11 +14,28 @@ import { FilterMovie } from "../components/movies/filter/FilterMovie";
   expect(closeModal).toHaveBeenCalledTimes(1);
 }); */
 
-it("should call the onSetFilteredMovie function when the user changes the select value", () => {
+// Simula la respuesta del fetch api
+jest.mock('fetch', () => ({
+  mockReturnValue: () => {
+    // Simula la respuesta del fetch api
+    return {
+      status: 200,
+      json: () => Promise.resolve([{ title: "Movie 1" }, { title: "Movie 2" }]),
+    };
+  },
+}));
+
+
+
+it("should call the fetch api", async () => {
   const onSetFilteredMovie = jest.fn();
   render(<FilterMovie onSetFilteredMovie={onSetFilteredMovie} />);
-  const select = screen.findAllByRole("select");
+  const select = screen.getByRole("select");
   select.value = "Action";
-  fireEvent.click(select);
-  expect(onSetFilteredMovie).toBeCalledWith(["Action"]);
-  });
+  fireEvent.change(select);
+
+  
+
+  // Espera a que la función fetchMovies se ejecute
+  await waitFor(() => expect(onSetFilteredMovie).toBeCalledWith(["Action"]));
+});

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1689443920484" clover="3.2.0">
-  <project timestamp="1689443920484" name="All files">
-    <metrics statements="134" coveredstatements="49" conditionals="24" coveredconditionals="6" methods="52" coveredmethods="19" elements="210" coveredelements="74" complexity="0" loc="134" ncloc="134" packages="13" files="17" classes="17"/>
+<coverage generated="1689450808797" clover="3.2.0">
+  <project timestamp="1689450808798" name="All files">
+    <metrics statements="126" coveredstatements="47" conditionals="24" coveredconditionals="6" methods="46" coveredmethods="16" elements="196" coveredelements="69" complexity="0" loc="126" ncloc="126" packages="12" files="16" classes="16"/>
     <package name="src">
       <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <file name="App.jsx" path="C:\Users\Hogar\Desktop\Laboratoria\movie-challenge\src\App.jsx">
@@ -150,36 +150,22 @@
       </file>
     </package>
     <package name="src.components.movies.filter">
-      <metrics statements="14" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="3"/>
+      <metrics statements="13" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
       <file name="FilterMovie.jsx" path="C:\Users\Hogar\Desktop\Laboratoria\movie-challenge\src\components\movies\filter\FilterMovie.jsx">
-        <metrics statements="14" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="3"/>
+        <metrics statements="13" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
         <line num="5" count="2" type="stmt"/>
-        <line num="7" count="4" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
         <line num="9" count="4" type="stmt"/>
         <line num="10" count="4" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="22" count="4" type="stmt"/>
-        <line num="24" count="4" type="stmt"/>
-        <line num="28" count="4" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
-      </file>
-    </package>
-    <package name="src.components.movies.modal">
-      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
-      <file name="Modal.jsx" path="C:\Users\Hogar\Desktop\Laboratoria\movie-challenge\src\components\movies\modal\Modal.jsx">
-        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="26" count="4" type="stmt"/>
+        <line num="29" count="4" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.components.movies.search">

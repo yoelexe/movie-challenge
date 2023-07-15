@@ -6,6 +6,7 @@ import { Error } from "../components/error/Error";
 import { Footer } from "../components/home/layouts/Footer";
 import { CardMovie } from "../components/movies/search/CardMovie";
 import { MovieList } from "../components/movies/search/MovieList";
+import { FilterMovie } from "../components/movies/filter/FilterMovie";
 
 test("renders h2 of Movies component", () => {
   render(<Movies />);
@@ -65,6 +66,11 @@ test("should render a list of movies", async () => {
   expect(movieList).toHaveLength(20);
 });
 
+test("renders FilterMovie component", () => {
+  render(<FilterMovie />);
+  // Asegúrate de que el componente se renderice correctamente sin errores
+  expect(screen.getByRole("select")).toBeInTheDocument();
+});
 
 /*
 solo puede ser utilizada con elementos HTML o SVG,
