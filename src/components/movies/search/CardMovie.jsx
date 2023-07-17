@@ -4,7 +4,7 @@ import { FiBookmark, FiHeart } from "react-icons/fi";
 export const CardMovie = ({ title, imgSrc }) => {
   return (
     <>
-      <div className="relative rounded-2xl h-full cursor-pointer">
+      <div className="relative  h-full cursor-pointer">
         <img
           src={"https://image.tmdb.org/t/p/original/" + imgSrc}
           alt=""

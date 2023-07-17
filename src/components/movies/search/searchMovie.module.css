@@ -1,3 +1,8 @@
+.containerSearch{
+  display: flex;
+  align-items: center;
+}
+
 .search{
   display: flex;
   align-items: center;
@@ -7,13 +12,13 @@
   background-color: #ccc;
 }
 
-.search .icon-search{
+.search .iconSearch{
   color: rgb(0, 0, 0, 0.26);
   margin-right: 1.5rem;
 }
 
 
-.search .search-all{
+.search .searchAll{
   font-size: 1rem;
   outline: none;
   
@@ -21,30 +26,34 @@
   background-color: #ccc;
 }
 
-.search .search-all::placeholder{
+.search .searchAll::placeholder{
   color: rgb(0, 0, 0, 0.26);
 }
 
 /*------------------------- other ------------------ */
 
-.movies-result{
+.moviesResult{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
   align-items: stretch;
 }
 
-.movies-result .article{
+.moviesResult .article{
   border: 1px solid #ccc;
   border-radius: 1em;
   box-shadow: 2px 2px 6px 0px rgb(0, 0, 0, 0.3);
 }
 
-.movies-result .article img{
+.moviesResult .article img{
   height: 100%;
 }
 
-.movies-result .article p{
+.moviesResult .article p{
   padding: 20px;
 }
 
+
+.containerResult{
+  padding: 40px;
+}

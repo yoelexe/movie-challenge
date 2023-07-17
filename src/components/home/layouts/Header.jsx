@@ -1,11 +1,10 @@
-// import { FiImage, FiMenu, FiHome, FiFastForward, FiSettings, FiUser, FiLogOut, FiHeart } from "react-icons/fi";
-// import { useState } from "react";
 import {
   FiX,
   FiMenu,
   FiShoppingCart,
   FiSearch
 } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
 
@@ -32,7 +31,7 @@ export const Header = () => {
       <header className="bg-black shadow-md text-white relative">
         {/* px-8 absolute z-50 */}
         <div className="container mx-auto px-8">
-          <div className="grid grid-cols-3 h-10 items-center">
+          <div className="grid grid-cols-3 h-12 items-center">
 
             <div className="flex justify-start">
               <div className="relative">
@@ -45,17 +44,17 @@ export const Header = () => {
                 </a>
                 <ul>
                   <li className="my-5">
-                    <a className="text-xl hover:text-[#F2C36B] cursor-pointer duration-300" href="/">Home</a></li>
+                    <Link className="text-xl hover:text-[#F2C36B] cursor-pointer duration-300" to={`/`}>Home</Link></li>
                   <li className="my-5">
-                    <a className="text-xl hover:text-[#F2C36B] cursor-pointer" href="/movies">Movies</a></li>
+                    <Link className="text-xl hover:text-[#F2C36B] cursor-pointer" to={`/movies`}>Movies</Link></li>
                     <li className="my-5">
-                    <a className="text-xl hover:text-[#F2C36B] cursor-pointer">Snacks</a></li>
+                    <Link className="text-xl hover:text-[#F2C36B] cursor-pointer">Snacks</Link></li>
                   <li className="my-5">
-                    <a className="text-xl hover:text-[#F2C36B] cursor-pointer">Favorite</a></li>
+                    <Link className="text-xl hover:text-[#F2C36B] cursor-pointer">Favorite</Link></li>
                   <li className="my-5">
-                    <a className="text-xl hover:text-[#F2C36B] cursor-pointer">User</a></li>
+                    <Link className="text-xl hover:text-[#F2C36B] cursor-pointer">User</Link></li>
                   <li className="my-5">
-                    <a className="text-xl hover:text-[#F2C36B] cursor-pointer">Log Out</a></li>
+                    <Link className="text-xl hover:text-[#F2C36B] cursor-pointer">Log Out</Link></li>
                     
                 </ul>
               </nav>
@@ -63,7 +62,7 @@ export const Header = () => {
             </div>
 
             <div className="flex justify-center">
-                <a className="text-2xl">CITYNEMA</a>
+                <a className="text-3xl font-medium text-[#F2C36B]">CITYNEMA</a>
             </div>
 
             <div className="flex justify-end">
@@ -77,10 +76,7 @@ export const Header = () => {
 
           </div>
         </div>
-      </header>
-
-      {/* Sidebar */}
-      
+      </header>      
     </>
   );
 };

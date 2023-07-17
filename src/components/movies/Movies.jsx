@@ -1,30 +1,17 @@
 import { SearchMovie } from "./search/SearchMovie";
-import "./movies.css";
+import styles from "../movies/movies.module.css";
 
 export const Movies = () => {
   return (
     <>
-      <div className="all-movies">
-        <h2
-          style={{
-            fontSize: "50px",
-            fontWeight: "600",
-            paddingBottom: "10px",
-            paddingTop: "20px",
-            paddingLeft: "35px"
-          }}
-        >
+      <div className={styles.allMovies}>
+        <h2 className={styles.title}>
           Search
         </h2>
-        <div className="home_panelList-wrap">
-          {/* <div className="home_panel-wrap">
-            <FilterMovie />
-          </div> */}
 
-          <div className="home_list-wrap">
+          <div className={styles.searchWrap}>
             <SearchMovie />
           </div>
-        </div>
       </div>
     </>
   );
