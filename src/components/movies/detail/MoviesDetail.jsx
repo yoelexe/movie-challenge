@@ -17,7 +17,6 @@ export const MoviesDetail = () => {
     );
     if (result.ok) {
       const data = await result.json();
-      /* console.log(data.genres.map((hola) => hola.name).join(" ")) */
       setInformation(data);
     }
   };
@@ -28,8 +27,6 @@ export const MoviesDetail = () => {
         `https://api.themoviedb.org/3/movie/${moviesId}?api_key=${apiConfig.apiKey}&language=en-US`
       );
       const data = await response.json();
-
-      /* console.log(data.genres.map((hola) => hola.name)); */
       setGenres(data.genres);
     };
 
@@ -114,7 +111,7 @@ export const MoviesDetail = () => {
 
           <section className="second-section">
             <h2 className="my-5">{information.title} </h2>
-            <h3>The Sypnopsis</h3>
+            <label>The Sypnopsis</label>
             <p>{information.overview}</p>
             <div className="flex items-center my-5">
               <button className="add-to-cart">
@@ -125,6 +122,7 @@ export const MoviesDetail = () => {
                 <FiHeart />
               </button>
             </div>
+            <label>Genre</label>
             <ul>
               {genres.map((genre) => (
                 <li key={genre.id}>{genre.name}</li>
@@ -134,11 +132,11 @@ export const MoviesDetail = () => {
 
           <section className="thrid-section">
             <h3>The Actors</h3>
-            <ul>
+            <ol>
               {actors.map((actor) => (
                 <li key={actor.id}>{actor.name}</li>
               ))}
-            </ul>
+            </ol>
           </section>
         </div>
       </div>

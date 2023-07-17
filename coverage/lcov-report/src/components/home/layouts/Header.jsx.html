@@ -144,13 +144,7 @@
 <a name='L79'></a><a href='#L79'>79</a>
 <a name='L80'></a><a href='#L80'>80</a>
 <a name='L81'></a><a href='#L81'>81</a>
-<a name='L82'></a><a href='#L82'>82</a>
-<a name='L83'></a><a href='#L83'>83</a>
-<a name='L84'></a><a href='#L84'>84</a>
-<a name='L85'></a><a href='#L85'>85</a>
-<a name='L86'></a><a href='#L86'>86</a>
-<a name='L87'></a><a href='#L87'>87</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L82'></a><a href='#L82'>82</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -231,18 +225,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// import { FiImage, FiMenu, FiHome, FiFastForward, FiSettings, FiUser, FiLogOut, FiHeart } from "react-icons/fi";
-// import { useState } from "react";
-import {
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {
   FiX,
   FiMenu,
   FiShoppingCart,
   FiSearch
 } from "react-icons/fi";
+import { Link } from "react-router-dom";
 &nbsp;
 export const Header = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
 &nbsp;
@@ -277,22 +266,21 @@ export const Header = <span class="cstat-no" title="statement not covered" ><spa
               &lt;nav className="offcanvas-menu fixed bg-black h-screen top-0 z-10 left-0
               md:w-1/6 w-2/3 shadow-md flex items-center px-8 -translate-x-full duration-300"&gt;
                 &lt;a className="menu-close-btn absolute top-6 right-6 mx-2 my-2" onClick={menuCloseBtn}&gt;
-                  &lt;FiX className="cursor-pointer dark:hover:text-white hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-600
-                   rounded"/&gt;
+                  &lt;FiX className="cursor-pointer"/&gt;
                 &lt;/a&gt;
                 &lt;ul&gt;
                   &lt;li className="my-5"&gt;
-                    &lt;a className="text-xl hover:text-[#F2C36B] cursor-pointer duration-300" href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                    &lt;Link className="text-xl hover:text-[#F2C36B] cursor-pointer duration-300" to={`/`}&gt;Home&lt;/Link&gt;&lt;/li&gt;
                   &lt;li className="my-5"&gt;
-                    &lt;a className="text-xl hover:text-[#F2C36B] cursor-pointer" href="/movies"&gt;Movies&lt;/a&gt;&lt;/li&gt;
+                    &lt;Link className="text-xl hover:text-[#F2C36B] cursor-pointer" to={`/movies`}&gt;Movies&lt;/Link&gt;&lt;/li&gt;
                     &lt;li className="my-5"&gt;
-                    &lt;a className="text-xl hover:text-[#F2C36B] cursor-pointer"&gt;Snacks&lt;/a&gt;&lt;/li&gt;
+                    &lt;Link className="text-xl hover:text-[#F2C36B] cursor-pointer"&gt;Snacks&lt;/Link&gt;&lt;/li&gt;
                   &lt;li className="my-5"&gt;
-                    &lt;a className="text-xl hover:text-[#F2C36B] cursor-pointer"&gt;Favorite&lt;/a&gt;&lt;/li&gt;
+                    &lt;Link className="text-xl hover:text-[#F2C36B] cursor-pointer"&gt;Favorite&lt;/Link&gt;&lt;/li&gt;
                   &lt;li className="my-5"&gt;
-                    &lt;a className="text-xl hover:text-[#F2C36B] cursor-pointer"&gt;User&lt;/a&gt;&lt;/li&gt;
+                    &lt;Link className="text-xl hover:text-[#F2C36B] cursor-pointer"&gt;User&lt;/Link&gt;&lt;/li&gt;
                   &lt;li className="my-5"&gt;
-                    &lt;a className="text-xl hover:text-[#F2C36B] cursor-pointer"&gt;Log Out&lt;/a&gt;&lt;/li&gt;
+                    &lt;Link className="text-xl hover:text-[#F2C36B] cursor-pointer"&gt;Log Out&lt;/Link&gt;&lt;/li&gt;
                     
                 &lt;/ul&gt;
               &lt;/nav&gt;
@@ -300,7 +288,7 @@ export const Header = <span class="cstat-no" title="statement not covered" ><spa
             &lt;/div&gt;
 &nbsp;
             &lt;div className="flex justify-center"&gt;
-                &lt;a className="text-2xl"&gt;CITYNEMA&lt;/a&gt;
+                &lt;a className="text-2xl font-medium text-[#F2C36B]"&gt;CITYNEMA&lt;/a&gt;
             &lt;/div&gt;
 &nbsp;
             &lt;div className="flex justify-end"&gt;
@@ -314,10 +302,7 @@ export const Header = <span class="cstat-no" title="statement not covered" ><spa
 &nbsp;
           &lt;/div&gt;
         &lt;/div&gt;
-      &lt;/header&gt;
-&nbsp;
-      {/* Sidebar */}
-      
+      &lt;/header&gt;      
     &lt;/&gt;
   );
 };
@@ -328,7 +313,7 @@ export const Header = <span class="cstat-no" title="statement not covered" ><spa
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-15T19:53:28.600Z
+                at 2023-07-17T05:07:34.150Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

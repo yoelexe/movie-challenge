@@ -22,7 +22,7 @@ export const Trending = () => {
     <section className="bg-[#262626] py-10 px-14">
       <div className="flex justify-between items-center">
       <h3 className="text-2xl font-medium text-white">Now In Cinemas</h3>
-      <Link to={`/movies`} className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600 cursor-pointer">See all</Link>
+      <Link to={`/movies`} className="underline text-white hover:text-[#F2EEEB] visited:text-[#F2C36B] cursor-pointer">See all</Link>
       </div>
       {/* grid card */}
       <div className=" grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -32,17 +32,17 @@ export const Trending = () => {
         key={trend.id}>
           <figure className="mx-5 my-5">
           <img
-          className="cursor-pointer rounded-2xl"
+          className="rounded-2xl"
          
             src={`https://image.tmdb.org/t/p/w500/${trend.poster_path}`}
             alt={trend.name}
           />
           {/*  onClick={() => navigate('movies')} */}
           </figure>
-          <figcaption className="flex items-center justify-center flex-col">
-            {/* text-cente mb-4 */}
-          <p className="text-center  leading-relaxed text-[#F2C36B]">{trend.title}</p>
-          <Link className="underline underline-offset-4 text-[#A65C32]" to={`/movies/${trend.id}`}>Ver detalle</Link>
+          <figcaption className="flex items-center flex-col px-5">
+
+          <p className="text-center leading-relaxed text-[#F2C36B]">{trend.title}</p>
+          <Link className="underline underline-offset-4 text-[#A65C32] py-2" to={`/movies/${trend.id}`}>See detail</Link>
           </figcaption>
           {/*
           Las rutas dinamicas se consumen a traves de un Hook

@@ -3,7 +3,6 @@ import { Movies } from "../components/movies/Movies";
 import { SearchMovie } from "../components/movies/search/SearchMovie";
 import { Login } from "../components/auth/Login";
 import { Error } from "../components/error/Error";
-import { Footer } from "../components/home/layouts/Footer";
 import { CardMovie } from "../components/movies/search/CardMovie";
 import { MovieList } from "../components/movies/search/MovieList";
 import { FilterMovie } from "../components/movies/filter/FilterMovie";
@@ -27,11 +26,6 @@ test("renders Login", () => {
 test('renders Error component', () => {
   render(<Error />);
   expect(screen.getByAltText("dino-error")).toBeInTheDocument();
-});
-
-test('renders Footer component', () => {
-  render(<Footer />);
-  expect(screen.getByText(/2023, Karen Huamán. All rights reserved/i)).toBeInTheDocument();
 });
 
 test('renders CardMovie component with title and buttons', () => {

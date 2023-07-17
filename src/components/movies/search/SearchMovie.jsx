@@ -30,7 +30,9 @@ export const SearchMovie = () => {
   return (
     <>
       <section className={styles.containerSearch}>
+      <label className={styles.title}>Enter movie name</label>
         <div className={styles.search}>
+          
           <FiSearch className={styles.iconSearch} />
           <input
             className={styles.searchAll}
@@ -45,7 +47,6 @@ export const SearchMovie = () => {
           apiKey={apiConfig.apiKey}
           onSetFilteredMovie={setFilteredMovie}
         ></FilterMovie>
-        <hr></hr>
       </section>
       <section className={styles.containerResult}>
         <div className={styles.moviesResult}>

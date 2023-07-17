@@ -29,12 +29,12 @@ export const FilterMovie = ({ onSetFilteredMovie }) => {
   return (
     <div>
       <section className="flex flex-col	text-white">
-        <label >Choose by gender: </label>
+        <label className="my-3">Choose by gender </label>
         <select
         role="select"
           value={genre}
           onChange={(e) => setGenre(e.target.value)}
-          className="rounded shadow-lg text-black"
+          className="rounded-md shadow-lg text-black w-72 px-3 py-2"
         >
           <option value="">All genres</option>
           <option value="28">Action</option>
