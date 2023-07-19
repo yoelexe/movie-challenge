@@ -1,0 +1,141 @@
+.banner {
+  height: 100vh;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,1));
+}
+
+.movieContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1260px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -200px;
+  position: relative;
+  padding: 0 2rem;
+}
+
+.containerDetail{
+  color: white;
+  position: relative;
+  display: grid;
+  width: 100%;
+  gap: 20px;
+}
+
+@media (min-width: 600px) {
+  .containerDetail { grid-template-columns: repeat(3, 1fr); }
+}
+
+.containerDetail section{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: justify;
+}
+
+.firstSection img{
+  border-radius: 10px;
+}
+
+.moviePoster{
+  flex: 1;
+}
+
+.movieImg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  padding-top: 165%;
+}
+
+.itemsofmovie{
+  justify-content: space-around;
+  display: flex;
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
+
+.itemsofmovie div{
+  border: 1px solid #595857;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px;
+  background-color: rgba(92, 90, 90, 0.5);
+}
+
+.itemsofmovie .icon{
+  font-size: 22px;
+  margin-bottom: 5px;
+  color: #F2C36B;
+}
+
+/*------------- Second Section --------------------- */
+
+.secondSection{
+  padding: 15px;
+}
+
+.addToCart{
+  margin-right: 10px;
+  background: #F2C36B;
+  border: none;
+  padding: 8px 10px;
+  font-size: 18px;
+  border-radius: 10px;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+
+.favorite {
+  background: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  color: black;
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.casts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 10px;
+}
+
+.thridSection{
+  align-items: center;
+}
+
+.secondSection h2,
+.thridSection h3{
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.secondSection label{
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: #F2C36B;
+}
+
+.thridSection li::marker{
+  content: ' - ';
+}

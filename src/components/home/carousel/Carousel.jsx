@@ -31,7 +31,7 @@ export const Carousel = () => {
 
   return (
     <div className=" h-[720px] w-full m-auto py-0 px-0 relative ">
-      <div style={{backgroundImage: `url(${slides[currentIndex].url})`}} className="w-full 
+      <div data-testid="first-slide" style={{backgroundImage: `url(${slides[currentIndex].url})`}} className="w-full 
       h-full bg-center bg-cover duration-300 "></div>
 
     {/* Left Arrow */}
@@ -39,7 +39,7 @@ export const Carousel = () => {
       <FiChevronLeft onClick={prevSlider} size={30} />
     </div>
     {/* Right Arrow */}
-    <div className="absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/50 text-white cursor-pointer">
+    <div data-testid="next-button" className="absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/50 text-white cursor-pointer">
       <FiChevronRight onClick={nextSlider} size={30} />
     </div>
     </div>

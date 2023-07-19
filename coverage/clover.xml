@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1689727371706" clover="3.2.0">
-  <project timestamp="1689727371707" name="All files">
-    <metrics statements="133" coveredstatements="63" conditionals="26" coveredconditionals="6" methods="53" coveredmethods="26" elements="212" coveredelements="95" complexity="0" loc="133" ncloc="133" packages="12" files="16" classes="16"/>
+<coverage generated="1689729726041" clover="3.2.0">
+  <project timestamp="1689729726041" name="All files">
+    <metrics statements="135" coveredstatements="84" conditionals="26" coveredconditionals="10" methods="56" coveredmethods="34" elements="217" coveredelements="128" complexity="0" loc="135" ncloc="135" packages="12" files="16" classes="16"/>
     <package name="src">
       <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="App.jsx" path="C:\Users\Hogar\Desktop\Laboratoria\movie-challenge\src\App.jsx">
@@ -18,7 +18,7 @@
       <file name="apiConfig.js" path="C:\Users\Hogar\Desktop\Laboratoria\movie-challenge\src\api\apiConfig.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="1" count="2" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
       </file>
@@ -114,41 +114,43 @@
       </file>
     </package>
     <package name="src.components.movies.detail">
-      <metrics statements="32" coveredstatements="1" conditionals="8" coveredconditionals="0" methods="10" coveredmethods="0"/>
+      <metrics statements="34" coveredstatements="22" conditionals="8" coveredconditionals="4" methods="13" coveredmethods="8"/>
       <file name="MoviesDetail.jsx" path="C:\Users\Hogar\Desktop\Laboratoria\movie-challenge\src\components\movies\detail\MoviesDetail.jsx">
-        <metrics statements="32" coveredstatements="1" conditionals="8" coveredconditionals="0" methods="10" coveredmethods="0"/>
+        <metrics statements="34" coveredstatements="22" conditionals="8" coveredconditionals="4" methods="13" coveredmethods="8"/>
         <line num="7" count="1" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="18" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="19" count="0" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="17" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="18" count="0" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="34" count="0" type="stmt"/>
-        <line num="37" count="0" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
-        <line num="41" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="45" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="46" count="0" type="stmt"/>
-        <line num="47" count="0" type="stmt"/>
-        <line num="51" count="0" type="stmt"/>
-        <line num="54" count="0" type="stmt"/>
-        <line num="55" count="0" type="stmt"/>
-        <line num="56" count="0" type="stmt"/>
-        <line num="57" count="0" type="stmt"/>
-        <line num="60" count="0" type="stmt"/>
-        <line num="119" count="0" type="stmt"/>
-        <line num="128" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="47" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="57" count="1" type="stmt"/>
+        <line num="58" count="1" type="stmt"/>
+        <line num="59" count="1" type="stmt"/>
+        <line num="62" count="1" type="stmt"/>
+        <line num="121" count="0" type="stmt"/>
+        <line num="130" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.components.movies.filter">

@@ -10,6 +10,7 @@ import { Trending } from "../components/home/trending/Trending";
 import App from '../App'
 import apiConfig from "../api/apiConfig";
 import { MemoryRouter } from "react-router-dom";
+import { MoviesDetail } from "../components/movies/detail/MoviesDetail";
 
 
 test("renders h2 of Movies component", () => {
@@ -99,3 +100,14 @@ it("renders the Home component when the path is /", () => {
     <MemoryRouter><App /></MemoryRouter>);
 });
 
+
+test("renders Login", () => {
+  render(<MoviesDetail />);
+  expect(screen.getByText("Date")).toBeInTheDocument();
+  expect(screen.getByText("Rating")).toBeInTheDocument();
+  expect(screen.getByText("Duration")).toBeInTheDocument();
+  expect(screen.getByText("The Sypnopsis")).toBeInTheDocument();
+  expect(screen.getByText("Booking")).toBeInTheDocument();
+  expect(screen.getByText("Genre")).toBeInTheDocument();
+  expect(screen.getByText("The Actors")).toBeInTheDocument();
+});

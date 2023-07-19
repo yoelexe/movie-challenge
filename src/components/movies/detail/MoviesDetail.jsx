@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import "./movieDetail.css";
+import styles from "./movieDetail.module.css";
 import { FiCalendar, FiClock, FiHeart, FiStar, FiTag } from "react-icons/fi";
 import apiConfig from "../../../api/apiConfig";
 
@@ -11,15 +11,17 @@ export const MoviesDetail = () => {
 
   let { moviesId } = useParams();
 
-  const fetchInformation = async () => {
-    const result = await fetch(
-      `https://api.themoviedb.org/3/movie/${moviesId}?api_key=${apiConfig.apiKey}&language=en-US`
-    );
-    if (result.ok) {
-      const data = await result.json();
-      setInformation(data);
-    }
-  };
+  const fetchInformation = () => {
+    return fetch(`${apiConfig.baseUrl}/movie/${moviesId}?api_key=${apiConfig.apiKey}&language=en-US`)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Error HTTP: " + response.status);
+      }
+      return response.json();
+    })
+    .then((data) => setInformation(data))
+    .catch((error) => console.log(error))
+  }
 
   useEffect(() => {
     fetchInformation();
@@ -28,7 +30,7 @@ export const MoviesDetail = () => {
   useEffect(() => {
     const fetchGenres = async () => {
       const response = await fetch(
-        `https://api.themoviedb.org/3/movie/${moviesId}?api_key=${apiConfig.apiKey}&language=en-US`
+        `${apiConfig.baseUrl}/movie/${moviesId}?api_key=${apiConfig.apiKey}&language=en-US`
       );
       const data = await response.json();
       setGenres(data.genres);
@@ -40,7 +42,7 @@ export const MoviesDetail = () => {
   useEffect(() => {
     const fetchActors = async () => {
       const response = await fetch(
-        `https://api.themoviedb.org/3/movie/${moviesId}/credits?api_key=${apiConfig.apiKey}`
+        `${apiConfig.baseUrl}/movie/${moviesId}/credits?api_key=${apiConfig.apiKey}`
       );
       if (response.ok) {
         const data = await response.json();
@@ -60,19 +62,19 @@ export const MoviesDetail = () => {
   return (
     <div className="bg-black ">
       <div
-        className="banner"
+        className={styles.banner}
         style={{
           backgroundImage: `url(${apiConfig.originalImage(
             information.backdrop_path || information.poster_path
           )})`,
         }}
       ></div>
-      <div className="movie-content">
-        <div className="container-detail">
-          <section className="first-section">
-            <div className="movie-content__poster">
+      <div className={styles.movieContent}>
+        <div className={styles.containerDetail}>
+          <section className={styles.firstSection}>
+            <div className={styles.moviePoster}>
               <div
-                className="movie-content__poster__img"
+                className={styles.movieImg}
                 style={{
                   backgroundImage: `url(${apiConfig.originalImage(
                     information.poster_path || information.backdrop_path
@@ -80,19 +82,19 @@ export const MoviesDetail = () => {
                 }}
               ></div>
 
-              <div className="itemsofmovie">
+              <div className={styles.itemsofmovie}>
                 <div>
-                  <FiCalendar className="icon" />
+                  <FiCalendar className={styles.icon} />
                   <p>Date</p>
                   <span>{information.release_date}</span>
                 </div>
                 <div>
-                  <FiStar className="icon" />
+                  <FiStar className={styles.icon}/>
                   <p>Rating</p>
                   <span>{information.vote_average} / 10</span>
                 </div>
                 <div>
-                  <FiClock className="icon" />
+                  <FiClock className={styles.icon} />
                   <p>Duration</p>
                   <span>{toTime(information.runtime)}</span>
                 </div>
@@ -100,16 +102,16 @@ export const MoviesDetail = () => {
             </div>
           </section>
 
-          <section className="second-section">
+          <section className={styles.secondSection}>
             <h2 className="my-5">{information.title} </h2>
             <label>The Sypnopsis</label>
             <p>{information.overview}</p>
             <div className="flex items-center my-5">
-              <button className="add-to-cart">
+              <button className={styles.addToCart}>
                 <FiTag className="text-xl	mx-2" />
                 <span>Booking</span>
               </button>
-              <button className="favorite">
+              <button className={styles.favorite}>
                 <FiHeart />
               </button>
             </div>
@@ -121,7 +123,7 @@ export const MoviesDetail = () => {
             </ul>
           </section>
 
-          <section className="thrid-section">
+          <section className={styles.thridSection}>
             <h3>The Actors</h3>
             <ol>
               {actors.map((actor) => (
