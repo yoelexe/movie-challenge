@@ -24,8 +24,16 @@ export const SearchMovie = () => {
   };
 
   useEffect(() => {
-    handleInput();
-  });
+    // Set the timeout
+    const timeoutId = setTimeout(() => {
+      handleInput();
+    }, 500);
+  
+    // Return a function to clear the timeout
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [searchTerm]);
 
   return (
     <>

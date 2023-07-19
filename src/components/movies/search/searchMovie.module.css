@@ -1,7 +1,6 @@
 .containerSearch{
   display: flex;
-  align-items: start;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   margin-inline: 50px;
 }

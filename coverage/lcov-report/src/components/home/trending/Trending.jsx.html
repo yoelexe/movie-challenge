@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">53.84% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>7/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">42.85% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>3/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">53.84% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>7/13</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -120,27 +120,41 @@
 <a name='L55'></a><a href='#L55'>55</a>
 <a name='L56'></a><a href='#L56'>56</a>
 <a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -178,58 +192,65 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useEffect, useState } from "react";
-import {  Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import apiConfig from "../../../api/apiConfig";
 &nbsp;
-export const Trending = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-  // const navigate = useNavigate();
+export const Trending = () =&gt; {
+  const [trending, setTrending] = useState([]);
 &nbsp;
-  const [trending, setTrending] = <span class="cstat-no" title="statement not covered" >useState([]);</span>
-&nbsp;
-  const getTrending = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
-    const url =
-<span class="cstat-no" title="statement not covered" >      "https://api.themoviedb.org/3/movie/now_playing?api_key=49e8c67adf3bbd50a3fce82777bba341";</span>
-    const res = <span class="cstat-no" title="statement not covered" >await fetch(url);</span>
-    const data = <span class="cstat-no" title="statement not covered" >await res.json();</span>
-<span class="cstat-no" title="statement not covered" >    setTrending(data.results);</span>
+  const getTrending = () =&gt; {
+    return fetch(`${apiConfig.baseUrl}/movie/now_playing?api_key=${apiConfig.apiKey}`)
+      .then(<span class="fstat-no" title="function not covered" >(r</span>esponse) =&gt; {
+<span class="cstat-no" title="statement not covered" >        if (!response.ok) {</span>
+<span class="cstat-no" title="statement not covered" >          throw new Error("Error HTTP: " + response.status);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return response.json();</span>
+      })
+      .then(<span class="fstat-no" title="function not covered" >(d</span>ata) =&gt; <span class="cstat-no" title="statement not covered" >setTrending(data.results))</span>
+      .catch(<span class="fstat-no" title="function not covered" >(e</span>rror) =&gt; <span class="cstat-no" title="statement not covered" >console.log(error))</span>;
   };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  useEffect(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    getTrending();</span>
+  useEffect(() =&gt; {
+    getTrending();
   }, []);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;section className="bg-[#262626] py-10 px-14"&gt;
       &lt;div className="flex justify-between items-center"&gt;
-      &lt;h3 className="text-2xl font-medium text-white"&gt;Now In Cinemas&lt;/h3&gt;
-      &lt;Link to={`/movies`} className="underline text-white hover:text-[#F2EEEB] visited:text-[#F2C36B] cursor-pointer"&gt;See all&lt;/Link&gt;
+        &lt;h3 className="text-2xl font-medium text-white"&gt;Now In Cinemas&lt;/h3&gt;
+        &lt;Link
+          to={`/movies`}
+          className="underline text-white hover:text-[#F2EEEB] visited:text-[#F2C36B] cursor-pointer"
+        &gt;
+          See all
+        &lt;/Link&gt;
       &lt;/div&gt;
-      {/* grid card */}
       &lt;div className=" grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"&gt;
-      {trending.map(<span class="fstat-no" title="function not covered" >(t</span>rend) =&gt; (
-<span class="cstat-no" title="statement not covered" >        &lt;div </span>
-        className="bg-black my-3 rounded-2xl shadow-md shadow-gray-200 dark:shadow-black    duration-200 hover:-translate-y-1"
-        key={trend.id}&gt;
-          &lt;figure className="mx-5 my-5"&gt;
-          &lt;img
-          className="rounded-2xl"
-         
-            src={`https://image.tmdb.org/t/p/w500/${trend.poster_path}`}
-            alt={trend.name}
-          /&gt;
-          {/*  onClick={() =&gt; navigate('movies')} */}
-          &lt;/figure&gt;
-          &lt;figcaption className="flex items-center flex-col px-5"&gt;
-&nbsp;
-          &lt;p className="text-center leading-relaxed text-[#F2C36B]"&gt;{trend.title}&lt;/p&gt;
-          &lt;Link className="underline underline-offset-4 text-[#A65C32] py-2" to={`/movies/${trend.id}`}&gt;See detail&lt;/Link&gt;
-          &lt;/figcaption&gt;
-          {/*
-          Las rutas dinamicas se consumen a traves de un Hook
-          */}
-          
-        &lt;/div&gt;
-        
-      ))}
+        {trending.map(<span class="fstat-no" title="function not covered" >(t</span>rend) =&gt; (
+<span class="cstat-no" title="statement not covered" >          &lt;div</span>
+            className="bg-black my-3 rounded-2xl shadow-md shadow-gray-200 dark:shadow-black duration-200 hover:-translate-y-1"
+            key={trend.id}
+          &gt;
+            &lt;figure className="mx-5 my-5"&gt;
+              &lt;img
+                className="rounded-2xl"
+                src={`https://image.tmdb.org/t/p/w500/${trend.poster_path}`}
+                alt={trend.name}
+              /&gt;
+            &lt;/figure&gt;
+            &lt;figcaption className="flex items-center flex-col px-5"&gt;
+              &lt;p className="text-center leading-relaxed text-[#F2C36B]"&gt;
+                {trend.title}
+              &lt;/p&gt;
+              &lt;Link
+                className="underline underline-offset-4 text-[#A65C32] py-2"
+                to={`/movies/${trend.id}`}
+              &gt;
+                See detail
+              &lt;/Link&gt;
+            &lt;/figcaption&gt;
+          &lt;/div&gt;
+        ))}
       &lt;/div&gt;
     &lt;/section&gt;
   );
@@ -241,7 +262,7 @@ export const Trending = <span class="cstat-no" title="statement not covered" ><s
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-17T05:07:34.150Z
+                at 2023-07-19T00:42:51.534Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

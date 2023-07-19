@@ -22,6 +22,10 @@ export const MoviesDetail = () => {
   };
 
   useEffect(() => {
+    fetchInformation();
+  });
+
+  useEffect(() => {
     const fetchGenres = async () => {
       const response = await fetch(
         `https://api.themoviedb.org/3/movie/${moviesId}?api_key=${apiConfig.apiKey}&language=en-US`
@@ -32,8 +36,6 @@ export const MoviesDetail = () => {
 
     fetchGenres();
   }, [moviesId]);
-
-  // backslash \ alt + 92
 
   useEffect(() => {
     const fetchActors = async () => {
@@ -48,17 +50,6 @@ export const MoviesDetail = () => {
 
     fetchActors();
   }, [moviesId]);
-
-  // const url = 'https://api.themoviedb.org/3/movie/movie_id?api_key=49e8c67adf3bbd50a3fce82777bba341'
-
-  useEffect(() => {
-    fetchInformation();
-  });
-
-  // consumir desde los parametros algunas variantes
-
-  // let productSelected = movies.find(movie => movie.id === moviesId)
-  // console.log(moviesId)
 
   const toTime = (min) => {
     let horas = Math.floor(min / 60);

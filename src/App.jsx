@@ -8,17 +8,8 @@ import { Header } from "./components/home/layouts/Header";
 import { Footer } from "./components/home/layouts/Footer";
 import { Login } from "./components/auth/Login";
 import { MoviesDetail } from "./components/movies/detail/MoviesDetail";
-// ! para el Login import { StrictMode } from "react";
 
-/* import { useEffect, useState } from "react" */
-
-//TODO: Componente App -> los nombres empiezan con maryuscula
 function App() {
-  // Estado: variables que guardan los "numeros"
-  // Ciclo de vida: Como interactuca con el tiempo el compoenente
-
-  // jsx (js + xml)javascript extended -> el html de mi aplicación
-
   return (
     <>
       <Header />

@@ -6,24 +6,22 @@ export const FilterMovie = ({ onSetFilteredMovie }) => {
   const [genre, setGenre] = useState("");
 
   useEffect(() => {
-    const fetchMovies = async () => {
-      const url = `${apiConfig.baseUrl}/discover/movie?with_genres=${genre}&api_key=${apiConfig.apiKey}`;
-
-      try {
-        const response = await fetch(url);
-        const data = await response.json();
-        onSetFilteredMovie(data.results);
-      } catch (err) {
-        console.log("Error", err);
-      }
-    };
-    // 3000 -> 3 segundos
-    /* const timer = setTimeout(() => {
-      fetchMovies()
-    }, 3000)
-
-    return () => clearTimeout(timer); */
-    fetchMovies();
+    const timer = setTimeout(()=>{
+      const fetchMovies = async () => {
+        const url = `${apiConfig.baseUrl}/discover/movie?with_genres=${genre}&api_key=${apiConfig.apiKey}`;
+  
+        try {
+          const response = await fetch(url);
+          const data = await response.json();
+          onSetFilteredMovie(data.results);
+        } catch (err) {
+          console.log("Error", err);
+        }
+      };
+  
+      fetchMovies();
+    }, 500)
+    return ()=> clearTimeout(timer)
   }, [genre, onSetFilteredMovie]);
 
   return (
