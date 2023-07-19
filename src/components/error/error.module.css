@@ -1,0 +1,51 @@
+.errorContainer{
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  background-color: white;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.dinoImage {
+  width: 200px;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.dinoImage.jump {
+  transform: translateY(-50px);
+}
+
+.dinoImage.collision {
+  animation: shake 0.5s linear infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(-5px);
+  }
+}
+
+h2 {
+  font-size: 24px;
+  margin: 10px 0;
+  color: black;
+}
+
+p {
+  font-size: 16px;
+  color: black;
+}

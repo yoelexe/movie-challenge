@@ -3,8 +3,8 @@ import styles from "./searchMovie.module.css";
 import apiConfig from "../../../api/apiConfig";
 import { useEffect, useState } from "react";
 import { CardMovie } from "./CardMovie";
-import { MovieList } from "./MovieList";
 import { FilterMovie } from "../filter/FilterMovie";
+import { Link } from "react-router-dom";
 
 export const SearchMovie = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -61,28 +61,34 @@ export const SearchMovie = () => {
           {movies.length > 0 && !filteredMovie ? (
             movies.map((movie) => (
               <div key={movie.id} className={styles.article}>
+                <Link to={`/movies/${movie.id}`}>
                 <CardMovie
                   imgSrc={movie?.poster_path}
                   title={movie?.title}
                 ></CardMovie>
+                </Link>
               </div>
             ))
           ) : filteredMovie && !movies.length > 0 ? (
             filteredMovie.map((movie) => (
               <div key={movie.id} className={styles.article}>
+                <Link to={`/movies/${movie.id}`}>
                 <CardMovie
                   imgSrc={movie?.poster_path}
                   title={movie?.title}
                 ></CardMovie>
+                </Link>
               </div>
             ))
           ) : movies.length > 0 ? (
             movies.map((movie) => (
               <div key={movie.id} className={styles.article}>
+                <Link to={`/movies/${movie.id}`}>
                 <CardMovie
                   imgSrc={movie?.poster_path}
                   title={movie?.title}
                 ></CardMovie>
+                </Link>
               </div>
             ))
           ) : filteredMovie ? (
@@ -95,7 +101,7 @@ export const SearchMovie = () => {
               </div>
             ))
           ) : (
-            <MovieList></MovieList>
+            <p>Cargando peliculas...</p>
           )}
         </div>
       </section>
