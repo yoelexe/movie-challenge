@@ -139,3 +139,11 @@
 .thridSection li::marker{
   content: ' - ';
 }
+
+.itemsofmovie p{
+  color: white;
+}
+
+.secondSection p{
+  color: white;
+}

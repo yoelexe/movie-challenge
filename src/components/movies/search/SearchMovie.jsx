@@ -24,7 +24,6 @@ export const SearchMovie = () => {
   };
 
   useEffect(() => {
-    // Set the timeout
     const timeoutId = setTimeout(() => {
       handleInput();
     }, 500);
@@ -62,10 +61,7 @@ export const SearchMovie = () => {
             movies.map((movie) => (
               <div key={movie.id} className={styles.article}>
                 <Link to={`/movies/${movie.id}`}>
-                <CardMovie
-                  imgSrc={movie?.poster_path}
-                  title={movie?.title}
-                ></CardMovie>
+                <CardMovie imgSrc={movie?.poster_path} title={movie?.title} />
                 </Link>
               </div>
             ))
@@ -73,10 +69,7 @@ export const SearchMovie = () => {
             filteredMovie.map((movie) => (
               <div key={movie.id} className={styles.article}>
                 <Link to={`/movies/${movie.id}`}>
-                <CardMovie
-                  imgSrc={movie?.poster_path}
-                  title={movie?.title}
-                ></CardMovie>
+                <CardMovie imgSrc={movie?.poster_path} title={movie?.title} />
                 </Link>
               </div>
             ))
@@ -84,20 +77,14 @@ export const SearchMovie = () => {
             movies.map((movie) => (
               <div key={movie.id} className={styles.article}>
                 <Link to={`/movies/${movie.id}`}>
-                <CardMovie
-                  imgSrc={movie?.poster_path}
-                  title={movie?.title}
-                ></CardMovie>
+                <CardMovie imgSrc={movie?.poster_path} title={movie?.title} />
                 </Link>
               </div>
             ))
           ) : filteredMovie ? (
             filteredMovie.map((movie) => (
               <div key={movie.id} className={styles.article}>
-                <CardMovie
-                  imgSrc={movie?.poster_path}
-                  title={movie?.title}
-                ></CardMovie>
+                <CardMovie imgSrc={movie?.poster_path} title={movie?.title} />
               </div>
             ))
           ) : (
