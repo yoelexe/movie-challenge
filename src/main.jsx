@@ -5,7 +5,7 @@ import App from './App.jsx'
 import './index.css'
 
 // nuevo componente para el router
-import { BrowserRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 
 // Strict Mode -> Ejecutar el proyecto dentro del local y lo ejecuta dos veces
 // para capturar errores
@@ -14,8 +14,8 @@ import { BrowserRouter } from 'react-router-dom'
 //? que sera nuestro index.html 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
     <App />
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>,
 )
